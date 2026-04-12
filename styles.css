@@ -827,17 +827,17 @@ a:hover {
 }
 
 .evidence-body {
-  gap: 10px;
+  gap: 16px;
   overflow: hidden !important;
 }
 
 .evidence-slide {
-  padding-top: 60px;
+  padding-top: 62px;
   padding-bottom: 34px;
 }
 
 .evidence-slide .slide-shell {
-  gap: 8px;
+  gap: 18px;
 }
 
 .evidence-intro {
@@ -849,19 +849,23 @@ a:hover {
 
 .evidence-copy {
   display: grid;
-  gap: 10px;
+  gap: 14px;
 }
 
 .evidence-title {
-  max-width: 14ch;
-  font-size: clamp(1.28rem, 1.95vw, 2.06rem);
-  line-height: 1.02;
+  max-width: 11.4ch;
+  font-size: clamp(1.85rem, 3.02vw, 3.35rem);
+  line-height: 1.08;
+}
+
+.evidence-title .gradient-text {
+  display: block;
 }
 
 .evidence-subtitle {
-  max-width: 92ch;
-  font-size: 0.84rem;
-  line-height: 1.42;
+  max-width: 84ch;
+  font-size: 0.96rem;
+  line-height: 1.68;
 }
 
 .evidence-pill-grid {
@@ -891,30 +895,27 @@ a:hover {
 }
 
 .evidence-chart-shell {
-  padding: 0;
-  gap: 0;
-  border: none;
-  background: transparent;
-  box-shadow: none;
+  padding: 22px 24px 20px;
+  gap: 16px;
 }
 
 .evidence-chart-shell .chart-header {
-  flex-direction: column;
   align-items: flex-start;
-  gap: 18px;
+  justify-content: space-between;
+  gap: 16px;
 }
 
 .evidence-chart-shell .chart-caption {
-  max-width: none;
+  max-width: 44ch;
   margin: 0;
-  font-size: 0.92rem;
-  line-height: 1.55;
+  font-size: 0.88rem;
+  line-height: 1.48;
 }
 
 .evidence-chart-layout {
   display: block;
   grid-template-columns: 1fr;
-  gap: 12px;
+  gap: 14px;
   align-items: stretch;
   width: 100%;
 }
@@ -966,9 +967,9 @@ a:hover {
 
 .evidence-table-card {
   display: grid;
-  grid-template-columns: minmax(0, 1.22fr) minmax(250px, 0.78fr);
-  gap: 8px 12px;
-  padding: 10px;
+  grid-template-columns: minmax(0, 1.16fr) minmax(260px, 0.84fr);
+  gap: 10px 16px;
+  padding: 0;
   width: 100%;
   justify-self: stretch;
 }
@@ -989,7 +990,7 @@ a:hover {
 }
 
 .evidence-table-card .table-card-header h3 {
-  font-size: 1.08rem;
+  font-size: 1rem;
 }
 
 .evidence-table-card .table-unit {
@@ -1047,7 +1048,7 @@ a:hover {
   grid-template-columns: 210px minmax(0, 1fr) 72px;
   gap: 10px;
   align-items: center;
-  padding: 8px 10px;
+  padding: 9px 12px;
   border-radius: 16px;
   border: 1px solid rgba(226, 232, 240, 0.92);
   background: rgba(255, 255, 255, 0.92);
@@ -1205,11 +1206,13 @@ a:hover {
   line-height: 1.55;
 }
 
-.evidence-chart-shell .chart-header,
 .evidence-inline-note,
-.evidence-chart-shell .callout,
-.evidence-slide .section-footer {
+.evidence-chart-shell .callout {
   display: none;
+}
+
+.evidence-slide .section-footer {
+  display: flex;
 }
 
 .chart-data-layout {
@@ -2132,26 +2135,32 @@ a:hover {
 
 @media (max-height: 860px) {
   .evidence-slide {
-    padding-top: 54px;
-    padding-bottom: 24px;
+    padding-top: 52px;
+    padding-bottom: 20px;
   }
 
   .evidence-title {
-    font-size: clamp(1.18rem, 1.8vw, 1.82rem);
+    font-size: clamp(1.56rem, 2.48vw, 2.42rem);
+    max-width: 11.2ch;
   }
 
   .evidence-subtitle {
-    font-size: 0.78rem;
-    line-height: 1.34;
+    font-size: 0.84rem;
+    line-height: 1.5;
   }
 
   .evidence-table-card {
-    gap: 6px 10px;
-    padding: 8px;
+    gap: 8px 10px;
+    padding: 0;
+  }
+
+  .evidence-chart-shell {
+    padding: 16px 18px 14px;
+    gap: 12px;
   }
 
   .evidence-bar-row {
-    padding: 7px 8px;
+    padding: 7px 9px;
     gap: 8px;
   }
 
@@ -2163,23 +2172,23 @@ a:hover {
 
 @media (max-height: 980px) {
   .evidence-slide {
-    padding-top: 60px;
-    padding-bottom: 34px;
+    padding-top: 56px;
+    padding-bottom: 26px;
   }
 
   .evidence-title {
-    font-size: clamp(1.28rem, 2vw, 2rem);
-    max-width: 15ch;
+    font-size: clamp(1.72rem, 2.8vw, 2.92rem);
+    max-width: 11.6ch;
   }
 
   .evidence-subtitle {
-    font-size: 0.86rem;
-    line-height: 1.45;
+    font-size: 0.9rem;
+    line-height: 1.54;
   }
 
   .evidence-chart-shell {
-    padding: 12px 14px 10px;
-    gap: 8px;
+    padding: 18px 20px 16px;
+    gap: 12px;
   }
 
   .evidence-vertical-chart {
