@@ -77,7 +77,8 @@ a:hover {
 .hero-note,
 .section-footer,
 .source-inline,
-.controls {
+.controls,
+.controls-wrap {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -1694,15 +1695,94 @@ a:hover {
   border-bottom: 0;
 }
 
-.controls {
+.controls-wrap {
   position: fixed;
   right: 18px;
   bottom: 18px;
   z-index: 20;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.controls {
   padding: 10px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.88);
   border: 1px solid hsl(var(--border));
+}
+
+.nav-guide {
+  position: relative;
+  display: grid;
+  justify-items: end;
+  gap: 6px;
+  opacity: 0;
+  transform: translateY(12px) scale(0.96);
+  transform-origin: bottom right;
+  pointer-events: none;
+  transition: opacity 0.35s ease, transform 0.35s ease;
+}
+
+body.is-hero-active .nav-guide {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.nav-guide-bubble {
+  position: relative;
+  max-width: 220px;
+  padding: 10px 13px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.96);
+  border: 1px solid rgba(191, 219, 254, 0.9);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08);
+  color: hsl(var(--foreground));
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.45;
+  letter-spacing: -0.01em;
+}
+
+.nav-guide-bubble::after {
+  content: "";
+  position: absolute;
+  right: 36px;
+  bottom: -7px;
+  width: 14px;
+  height: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  border-right: 1px solid rgba(191, 219, 254, 0.9);
+  border-bottom: 1px solid rgba(191, 219, 254, 0.9);
+  transform: rotate(45deg);
+}
+
+.nav-guide-duck {
+  width: 86px;
+  height: 86px;
+  margin-right: 20px;
+  filter: drop-shadow(0 12px 24px rgba(15, 23, 42, 0.14));
+}
+
+.nav-guide-duck-float {
+  transform-origin: 52% 80%;
+  animation: navDuckFloat 3.8s ease-in-out infinite;
+}
+
+.nav-guide-duck-head {
+  transform-origin: 82px 54px;
+  animation: navDuckNod 2.8s ease-in-out infinite;
+}
+
+.nav-guide-duck-wing {
+  transform-origin: 110px 101px;
+  animation: navDuckPoint 1.8s ease-in-out infinite;
+}
+
+.nav-guide-arrow {
+  stroke-dasharray: 44;
+  stroke-dashoffset: 44;
+  animation: navGuideArrow 1.7s ease-in-out infinite;
 }
 
 .control-button {
@@ -1737,6 +1817,30 @@ a:hover {
 @keyframes floatCard {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
+}
+
+@keyframes navDuckFloat {
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  50% { transform: translate3d(0, -6px, 0) rotate(-1.2deg); }
+}
+
+@keyframes navDuckNod {
+  0%, 100% { transform: rotate(0deg) translateY(0); }
+  30% { transform: rotate(-4deg) translate(-1px, -1px); }
+  65% { transform: rotate(3deg) translate(1px, -2px); }
+}
+
+@keyframes navDuckPoint {
+  0%, 100% { transform: rotate(0deg) translate(0, 0); }
+  45% { transform: rotate(-7deg) translate(1px, -2px); }
+  70% { transform: rotate(8deg) translate(2px, 0); }
+}
+
+@keyframes navGuideArrow {
+  0% { stroke-dashoffset: 44; opacity: 0; }
+  20% { opacity: 1; }
+  60% { stroke-dashoffset: 0; opacity: 1; }
+  100% { stroke-dashoffset: -10; opacity: 0; }
 }
 
 @keyframes conductorBody {
@@ -2266,7 +2370,7 @@ a:hover {
 
 @media (max-width: 860px) {
   html, body { overflow: auto; }
-  .hud, .controls { position: sticky; }
+  .hud, .controls-wrap, .controls { position: sticky; }
   .slide, .slide.is-active {
     display: block;
     height: auto;
@@ -2286,6 +2390,13 @@ a:hover {
   .vertical-chart { grid-template-columns: 1fr; }
   .chart-header { flex-direction: column; }
   .chart-scale { display: none; }
+  .controls-wrap {
+    right: 12px;
+    bottom: 12px;
+  }
+  .nav-guide {
+    display: none;
+  }
   .metric-table th:nth-child(3),
   .metric-table td:nth-child(3) {
     width: auto;

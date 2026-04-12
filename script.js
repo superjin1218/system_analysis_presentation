@@ -279,6 +279,7 @@ function renderSlide(index) {
   });
 
   const activeSlide = slides[currentIndex];
+  document.body.classList.toggle("is-hero-active", currentIndex === 0);
   slideTitle.textContent = activeSlide.dataset.title || `Slide ${currentIndex + 1}`;
   slideCounter.textContent = `${String(currentIndex + 1).padStart(2, "0")} / ${String(slides.length).padStart(2, "0")}`;
   progressBar.style.width = `${((currentIndex + 1) / slides.length) * 100}%`;
