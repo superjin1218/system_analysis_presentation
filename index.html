@@ -216,13 +216,27 @@
       </div>
     </section>
 
-    <section class="slide" data-title="근거 그래프 1">
+    <section class="slide evidence-slide" data-title="근거 그래프 1">
       <div class="slide-shell">
         <div class="eyebrow">Slide 04</div>
-        <div class="section-body">
-          <h2 class="title">근거 1. <span class="gradient-text">최신 모델도 hallucination을 완전히 없애지 못했다</span></h2>
-          <p class="subtitle">2026년 3월 20일에 업데이트된 Vectara Hallucination Leaderboard(HHEM-2.3)는 최신 프런티어 모델도 문서 요약에서 여전히 hallucination을 낸다는 점을 보여준다. 낮을수록 더 좋은 값이다.</p>
-          <article class="card chart-shell">
+        <div class="section-body evidence-body">
+          <div class="evidence-intro">
+            <div class="evidence-copy">
+              <h2 class="title evidence-title">근거 1. 최신 모델도 <span class="gradient-text">hallucination을 완전히 없애지 못했다</span></h2>
+              <p class="subtitle evidence-subtitle">2026년 3월 20일에 업데이트된 Vectara Hallucination Leaderboard(HHEM-2.3)는 최신 프런티어 모델도 문서 요약에서 여전히 hallucination을 낸다는 점을 보여준다. 낮을수록 더 좋은 값이다.</p>
+            </div>
+            <div class="evidence-pill-grid" aria-label="핵심 수치 요약">
+              <article class="mini-note evidence-pill">
+                <strong>최저 7.0%</strong>
+                <span>GPT-5.4, Gemini 2.5 Pro</span>
+              </article>
+              <article class="mini-note evidence-pill is-warm">
+                <strong>최고 17.8%</strong>
+                <span>Grok 4.1 Fast</span>
+              </article>
+            </div>
+          </div>
+          <article class="card chart-shell evidence-chart-shell">
             <div class="chart-header">
               <div>
                 <p class="kicker">근거 그래프</p>
@@ -230,8 +244,8 @@
               </div>
               <p class="chart-caption">같은 2026년 3월 20일 스냅샷에서 GPT-5.4 7.0%, Gemini 2.5 Pro 7.0%, Claude Sonnet 4.6 10.6%, Grok 4.1 Fast 17.8%였다.</p>
             </div>
-            <div class="chart-data-layout">
-              <div class="vertical-chart compact-chart" data-chart="hallucination-latest" data-scale-max="20">
+            <div class="chart-data-layout evidence-chart-layout">
+              <div class="vertical-chart compact-chart evidence-vertical-chart" data-chart="hallucination-latest" data-scale-max="20">
                 <div class="chart-scale"><span>20%</span><span>15%</span><span>10%</span><span>5%</span><span>0%</span></div>
                 <div class="bars-wrap">
                   <div class="bar-column">
@@ -252,7 +266,7 @@
                   </div>
                 </div>
               </div>
-              <div class="data-table-card">
+              <div class="data-table-card evidence-table-card">
                 <div class="table-card-header">
                   <div>
                     <p class="kicker">수치 표</p>
@@ -260,73 +274,42 @@
                   </div>
                   <span class="table-unit">scale max 20%</span>
                 </div>
-                <table class="metric-table" data-scale-max="20">
-                  <thead>
-                    <tr>
-                      <th>모델</th>
-                      <th>rate</th>
-                      <th>시각화</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr>
-                      <td>
-                        <div class="model-cell">
-                          <span class="table-chip table-chip-gpt">GPT</span>
-                          <span class="model-cell-name">GPT-5.4</span>
-                        </div>
-                      </td>
-                      <td><strong class="table-value" data-target="7.0" data-decimals="1" data-suffix="%">0.0%</strong></td>
-                      <td>
-                        <div class="table-track">
-                          <div class="table-fill" data-target="7.0" style="--fill-color: linear-gradient(90deg, #0f172a, #334155);"></div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="model-cell">
-                          <span class="table-chip table-chip-gemini">Gemini</span>
-                          <span class="model-cell-name">Gemini 2.5 Pro</span>
-                        </div>
-                      </td>
-                      <td><strong class="table-value" data-target="7.0" data-decimals="1" data-suffix="%">0.0%</strong></td>
-                      <td>
-                        <div class="table-track">
-                          <div class="table-fill" data-target="7.0" style="--fill-color: linear-gradient(90deg, #14b8a6, #0f766e);"></div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="model-cell">
-                          <span class="table-chip table-chip-claude">Claude</span>
-                          <span class="model-cell-name">Claude Sonnet 4.6</span>
-                        </div>
-                      </td>
-                      <td><strong class="table-value" data-target="10.6" data-decimals="1" data-suffix="%">0.0%</strong></td>
-                      <td>
-                        <div class="table-track">
-                          <div class="table-fill" data-target="10.6" style="--fill-color: linear-gradient(90deg, #8b5cf6, #6d28d9);"></div>
-                        </div>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>
-                        <div class="model-cell">
-                          <span class="table-chip table-chip-grok">Grok</span>
-                          <span class="model-cell-name">Grok 4.1 Fast</span>
-                        </div>
-                      </td>
-                      <td><strong class="table-value" data-target="17.8" data-decimals="1" data-suffix="%">0.0%</strong></td>
-                      <td>
-                        <div class="table-track">
-                          <div class="table-fill" data-target="17.8" style="--fill-color: linear-gradient(90deg, #f59e0b, #d97706);"></div>
-                        </div>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
+                <div class="evidence-axis" aria-hidden="true"><span>0%</span><span>5%</span><span>10%</span><span>15%</span><span>20%</span></div>
+                <div class="evidence-bar-board" aria-label="hallucination rate bars">
+                  <div class="evidence-bar-row">
+                    <div class="evidence-bar-head">
+                      <span class="table-chip table-chip-gpt">GPT</span>
+                      <span class="model-cell-name">GPT-5.4</span>
+                    </div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-gpt" style="--target-width: 35%;"></div></div>
+                    <div class="evidence-bar-value">7.0%</div>
+                  </div>
+                  <div class="evidence-bar-row">
+                    <div class="evidence-bar-head">
+                      <span class="table-chip table-chip-gemini">Gemini</span>
+                      <span class="model-cell-name">Gemini 2.5 Pro</span>
+                    </div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-gemini" style="--target-width: 35%;"></div></div>
+                    <div class="evidence-bar-value">7.0%</div>
+                  </div>
+                  <div class="evidence-bar-row">
+                    <div class="evidence-bar-head">
+                      <span class="table-chip table-chip-claude">Claude</span>
+                      <span class="model-cell-name">Claude Sonnet 4.6</span>
+                    </div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-claude" style="--target-width: 53%;"></div></div>
+                    <div class="evidence-bar-value">10.6%</div>
+                  </div>
+                  <div class="evidence-bar-row">
+                    <div class="evidence-bar-head">
+                      <span class="table-chip table-chip-grok">Grok</span>
+                      <span class="model-cell-name">Grok 4.1 Fast</span>
+                    </div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-grok" style="--target-width: 89%;"></div></div>
+                    <div class="evidence-bar-value">17.8%</div>
+                  </div>
+                </div>
+                <div class="evidence-inline-note">막대 그래프와 수치 표를 함께 보면 최신 모델도 0%가 아니며, 모델 간 편차도 분명하게 드러난다.</div>
                 <div class="table-summary">
                   <article class="card metric-card compact"><strong>7.0%</strong><span>최저 수치도 0%와는 거리가 있다.</span></article>
                   <article class="card metric-card compact"><strong>17.8%</strong><span>모델 간 리스크 차이도 분명히 보인다.</span></article>

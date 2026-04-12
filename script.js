@@ -11,6 +11,16 @@ function clamp(value, min, max) {
   return Math.min(Math.max(value, min), max);
 }
 
+function getInitialIndex() {
+  const params = new URLSearchParams(window.location.search);
+  const requestedSlide = Number(params.get("slide") || "1");
+  if (!Number.isFinite(requestedSlide)) {
+    return 0;
+  }
+
+  return clamp(Math.floor(requestedSlide) - 1, 0, slides.length - 1);
+}
+
 function formatValue(value, decimals = 0, suffix = "") {
   return `${Number(value).toFixed(decimals)}${suffix}`;
 }
@@ -146,6 +156,28 @@ function resetAndAnimateMetricTable(slide) {
   });
 }
 
+function resetAndAnimateEvidenceBars(slide) {
+  const fills = slide.querySelectorAll(".evidence-bar-fill");
+  if (!fills.length) return;
+
+  fills.forEach((fill) => {
+    clearTimeout(fill._timer);
+    fill.style.transition = "none";
+    fill.style.transform = "scaleX(0)";
+    fill.style.opacity = "0.7";
+  });
+
+  requestAnimationFrame(() => {
+    fills.forEach((fill, index) => {
+      fill._timer = setTimeout(() => {
+        fill.style.transition = "transform 1s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease";
+        fill.style.transform = "scaleX(1)";
+        fill.style.opacity = "1";
+      }, 120 * index);
+    });
+  });
+}
+
 function resetAndAnimateRing(slide) {
   const circumference = 2 * Math.PI * 54;
   const rings = slide.querySelectorAll(".ring-meter");
@@ -179,6 +211,10 @@ function animateSlide(slide) {
 
   if (slide.querySelector(".metric-table")) {
     resetAndAnimateMetricTable(slide);
+  }
+
+  if (slide.querySelector(".evidence-bar-board")) {
+    resetAndAnimateEvidenceBars(slide);
   }
 
   if (slide.querySelector("[data-chart='clinical']")) {
@@ -236,4 +272,4 @@ document.addEventListener("keydown", (event) => {
   }
 });
 
-renderSlide(0);
+renderSlide(getInitialIndex());
