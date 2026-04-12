@@ -180,6 +180,7 @@ a:hover {
 .slide-shell {
   max-width: 1320px;
   height: 100%;
+  min-height: 0;
   margin: 0 auto;
   display: grid;
   grid-template-rows: auto 1fr auto;
@@ -371,6 +372,24 @@ a:hover {
   max-width: 760px;
 }
 
+.section-body {
+  align-content: start;
+  min-height: 0;
+  overflow-y: auto;
+  padding-right: 8px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(148, 163, 184, 0.45) transparent;
+}
+
+.section-body::-webkit-scrollbar {
+  width: 9px;
+}
+
+.section-body::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: rgba(148, 163, 184, 0.45);
+}
+
 .hero-layout {
   grid-template-columns: minmax(0, 1.1fr) minmax(360px, 0.9fr);
   align-items: center;
@@ -422,7 +441,7 @@ a:hover {
   background: radial-gradient(circle, rgba(103, 232, 249, 0.18), rgba(96, 165, 250, 0.08) 44%, rgba(59, 130, 246, 0) 72%);
   filter: blur(10px);
   z-index: 0;
-  animation: stagePulse 2.8s ease-in-out infinite;
+  animation: stagePulse 4.6s ease-in-out infinite;
 }
 
 .hero-character {
@@ -435,7 +454,7 @@ a:hover {
 
 .character-float {
   transform-origin: center bottom;
-  animation: conductorBody 2.8s cubic-bezier(0.48, 0.08, 0.26, 0.99) infinite;
+  animation: conductorBody 4.6s cubic-bezier(0.37, 0, 0.22, 1) infinite;
 }
 
 .stage-halo,
@@ -445,11 +464,11 @@ a:hover {
 }
 
 .stage-halo {
-  animation: haloDrift 2.8s ease-in-out infinite;
+  animation: haloDrift 4.6s ease-in-out infinite;
 }
 
 .stage-shadow {
-  animation: shadowPulse 2.8s ease-in-out infinite;
+  animation: shadowPulse 4.6s ease-in-out infinite;
 }
 
 .conductor-body,
@@ -462,33 +481,33 @@ a:hover {
 
 .conductor-body {
   transform-origin: 50% 20%;
-  animation: conductorTorso 2.8s cubic-bezier(0.52, 0.08, 0.3, 0.98) infinite;
+  animation: conductorTorso 4.6s cubic-bezier(0.37, 0, 0.22, 1) infinite;
 }
 
 .conductor-head {
   transform-origin: 50% 72%;
-  animation: conductorHead 2.8s ease-in-out infinite;
+  animation: conductorHead 4.6s ease-in-out infinite;
 }
 
 .conductor-left-wing {
   transform-origin: 82% 28%;
-  animation: conductorLeftWing 2.8s cubic-bezier(0.52, 0.05, 0.36, 0.98) infinite;
+  animation: conductorLeftWing 4.6s cubic-bezier(0.37, 0, 0.22, 1) infinite;
 }
 
 .conductor-right-arm {
   transform-origin: 14% 28%;
-  animation: conductorRightArm 2.8s cubic-bezier(0.58, 0.06, 0.24, 0.99) infinite;
+  animation: conductorRightArm 4.6s cubic-bezier(0.37, 0, 0.22, 1) infinite;
 }
 
 .conductor-feet {
   transform-origin: 50% 8%;
-  animation: conductorFeet 2.8s cubic-bezier(0.54, 0.08, 0.32, 0.98) infinite;
+  animation: conductorFeet 4.6s cubic-bezier(0.37, 0, 0.22, 1) infinite;
 }
 
 .baton-star {
   transform-box: fill-box;
   transform-origin: center;
-  animation: batonSpark 2.8s ease-in-out infinite;
+  animation: batonSpark 4.6s ease-in-out infinite;
 }
 
 .baton-pulse {
@@ -498,11 +517,11 @@ a:hover {
 }
 
 .baton-pulse-a {
-  animation: batonPulseA 2.8s ease-out infinite;
+  animation: batonPulseA 4.6s ease-out infinite;
 }
 
 .baton-pulse-b {
-  animation: batonPulseB 2.8s ease-out infinite;
+  animation: batonPulseB 4.6s ease-out infinite;
 }
 
 .baton-swish {
@@ -511,15 +530,15 @@ a:hover {
 }
 
 .baton-swish-a {
-  animation: batonSwishA 2.8s ease-in-out infinite;
+  animation: batonSwishA 4.6s ease-in-out infinite;
 }
 
 .baton-swish-b {
-  animation: batonSwishB 2.8s ease-in-out infinite;
+  animation: batonSwishB 4.6s ease-in-out infinite;
 }
 
 .baton-swish-c {
-  animation: batonSwishC 2.8s ease-in-out infinite;
+  animation: batonSwishC 4.6s ease-in-out infinite;
 }
 
 .left-swish {
@@ -528,11 +547,11 @@ a:hover {
 }
 
 .left-swish-a {
-  animation: leftSwishA 2.8s ease-in-out infinite;
+  animation: leftSwishA 4.6s ease-in-out infinite;
 }
 
 .left-swish-b {
-  animation: leftSwishB 2.8s ease-in-out infinite;
+  animation: leftSwishB 4.6s ease-in-out infinite;
 }
 
 .model-badge {
@@ -592,25 +611,25 @@ a:hover {
 .model-gpt {
   top: 74px;
   left: 18px;
-  animation: orbitFloatA 6.4s ease-in-out infinite, modelPulse 2.8s ease-in-out 0s infinite;
+  animation: orbitFloatA 8.8s ease-in-out infinite, modelPulse 4.6s ease-in-out 0s infinite;
 }
 
 .model-claude {
   top: 124px;
   right: -6px;
-  animation: orbitFloatB 6.1s ease-in-out infinite, modelPulse 2.8s ease-in-out -0.55s infinite;
+  animation: orbitFloatB 8.4s ease-in-out infinite, modelPulse 4.6s ease-in-out -0.8s infinite;
 }
 
 .model-grok {
   bottom: 128px;
   left: 6px;
-  animation: orbitFloatC 6.7s ease-in-out infinite, modelPulse 2.8s ease-in-out -1.2s infinite;
+  animation: orbitFloatC 9.2s ease-in-out infinite, modelPulse 4.6s ease-in-out -1.6s infinite;
 }
 
 .model-gemini {
   bottom: 96px;
   right: 18px;
-  animation: orbitFloatD 6.2s ease-in-out infinite, modelPulse 2.8s ease-in-out -1.8s infinite;
+  animation: orbitFloatD 8.6s ease-in-out infinite, modelPulse 4.6s ease-in-out -2.3s infinite;
 }
 
 .signal-beam {
@@ -623,7 +642,7 @@ a:hover {
   filter: blur(0.4px);
   opacity: 0.18;
   background-size: 200% 100%;
-  animation: beamPulse 2.8s ease-in-out infinite;
+  animation: beamPulse 4.6s ease-in-out infinite;
 }
 
 .signal-beam-a {
@@ -794,11 +813,26 @@ a:hover {
   background: linear-gradient(180deg, rgba(239, 246, 255, 0.9), rgba(236, 253, 245, 0.72));
 }
 
+.chart-data-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(300px, 0.85fr);
+  gap: 18px;
+  align-items: start;
+}
+
 .vertical-chart {
   display: grid;
   grid-template-columns: 64px 1fr;
   gap: 12px;
   min-height: 370px;
+}
+
+.compact-chart {
+  min-height: 316px;
+}
+
+.compact-chart .chart-scale {
+  padding-bottom: 18px;
 }
 
 .chart-scale {
@@ -823,6 +857,10 @@ a:hover {
   overflow: hidden;
 }
 
+.compact-chart .bars-wrap {
+  padding: 14px 8px 10px;
+}
+
 .bars-wrap::before {
   content: "";
   position: absolute;
@@ -830,6 +868,10 @@ a:hover {
   background: linear-gradient(to top, rgba(148, 163, 184, 0.14) 1px, transparent 1px);
   background-size: 100% 25%;
   pointer-events: none;
+}
+
+.compact-chart .bars-wrap::before {
+  inset: 14px 8px 34px;
 }
 
 .bar-column,
@@ -843,6 +885,10 @@ a:hover {
   display: flex;
   align-items: end;
   justify-content: center;
+}
+
+.compact-chart .bar-meter {
+  height: 204px;
 }
 
 .bar-fill {
@@ -893,6 +939,185 @@ a:hover {
 
 .bar-fill.is-filled::after {
   animation: barSheen 1s ease-out 0.05s both;
+}
+
+.data-table-card {
+  display: grid;
+  gap: 14px;
+  padding: 18px;
+  border-radius: 24px;
+  border: 1px solid hsl(var(--border));
+  background: linear-gradient(180deg, rgba(248, 250, 252, 0.92), rgba(255, 255, 255, 0.9));
+}
+
+.table-card-header {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.table-unit {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: hsl(var(--muted-foreground));
+  background: rgba(255, 255, 255, 0.86);
+  border: 1px solid hsl(var(--border));
+}
+
+.metric-table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: separate;
+  border-spacing: 0 10px;
+}
+
+.metric-table th {
+  padding: 0 10px 2px;
+  font-size: 0.75rem;
+  text-align: left;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: hsl(var(--muted-foreground));
+}
+
+.metric-table th:nth-child(2),
+.metric-table td:nth-child(2) {
+  width: 86px;
+}
+
+.metric-table th:nth-child(3),
+.metric-table td:nth-child(3) {
+  width: 40%;
+}
+
+.metric-table tbody tr {
+  opacity: 0;
+  transform: translateY(10px);
+  transition:
+    opacity 0.45s ease,
+    transform 0.55s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.metric-table tbody tr.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.metric-table td {
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border-top: 1px solid rgba(226, 232, 240, 0.92);
+  border-bottom: 1px solid rgba(226, 232, 240, 0.92);
+  vertical-align: middle;
+}
+
+.metric-table td:first-child {
+  border-left: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 16px 0 0 16px;
+}
+
+.metric-table td:last-child {
+  border-right: 1px solid rgba(226, 232, 240, 0.92);
+  border-radius: 0 16px 16px 0;
+}
+
+.model-cell {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.model-cell-name {
+  font-weight: 800;
+  color: hsl(var(--foreground));
+  letter-spacing: -0.02em;
+}
+
+.table-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 64px;
+  padding: 7px 10px;
+  border-radius: 999px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #fff;
+}
+
+.table-chip-gpt {
+  background: linear-gradient(135deg, #0f172a, #334155);
+}
+
+.table-chip-gemini {
+  background: linear-gradient(135deg, #0f766e, #14b8a6);
+}
+
+.table-chip-claude {
+  background: linear-gradient(135deg, #6d28d9, #8b5cf6);
+}
+
+.table-chip-grok {
+  background: linear-gradient(135deg, #d97706, #f59e0b);
+}
+
+.table-value {
+  display: inline-block;
+  min-width: 56px;
+  font-size: 1.08rem;
+  font-weight: 900;
+  color: hsl(var(--foreground));
+  letter-spacing: -0.03em;
+}
+
+.table-track {
+  width: 100%;
+  height: 10px;
+  border-radius: 999px;
+  background: rgba(226, 232, 240, 0.95);
+  overflow: hidden;
+}
+
+.table-fill {
+  position: relative;
+  width: 0;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--fill-color, linear-gradient(90deg, #3b82f6, #2563eb));
+  transition: width 1.15s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.table-fill::after {
+  content: "";
+  position: absolute;
+  inset: 0 auto 0 -40%;
+  width: 36%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.46), rgba(255, 255, 255, 0));
+  opacity: 0;
+}
+
+.table-fill.is-filled::after {
+  animation: rowSheen 1s ease-out 0.1s both;
+}
+
+.table-summary {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.metric-card.compact {
+  min-height: 0;
+  padding: 16px 18px;
+}
+
+.metric-card.compact strong {
+  font-size: 1.5rem;
 }
 
 .horizontal-chart,
@@ -1110,64 +1335,53 @@ a:hover {
 }
 
 @keyframes conductorBody {
-  0%, 100% { transform: translate3d(0, 0, 0) rotate(-1.8deg) scaleY(1); }
-  10% { transform: translate3d(6px, -3px, 0) rotate(-0.6deg) scaleY(1.02); }
-  24% { transform: translate3d(-8px, -18px, 0) rotate(2.6deg) scaleY(1.05); }
-  38% { transform: translate3d(10px, 2px, 0) rotate(-2.2deg) scaleY(0.98); }
-  54% { transform: translate3d(-6px, -12px, 0) rotate(1.6deg) scaleY(1.03); }
-  68% { transform: translate3d(8px, -1px, 0) rotate(-1.8deg) scaleY(0.99); }
-  84% { transform: translate3d(-5px, -10px, 0) rotate(1.9deg) scaleY(1.02); }
+  0%, 100% { transform: translate3d(0, 0, 0) rotate(-0.8deg) scaleY(1); }
+  18% { transform: translate3d(3px, -6px, 0) rotate(0.8deg) scaleY(1.01); }
+  36% { transform: translate3d(-4px, -12px, 0) rotate(1.4deg) scaleY(1.025); }
+  54% { transform: translate3d(4px, -4px, 0) rotate(-1.1deg) scaleY(0.995); }
+  72% { transform: translate3d(-3px, -9px, 0) rotate(1deg) scaleY(1.015); }
+  88% { transform: translate3d(2px, -3px, 0) rotate(-0.5deg) scaleY(1.005); }
 }
 
 @keyframes conductorTorso {
-  0%, 100% { transform: rotate(-1.8deg) translate(0, 0) scaleX(1); }
-  12% { transform: rotate(2.8deg) translate(3px, -4px) scaleX(1.01); }
-  24% { transform: rotate(-4.2deg) translate(-4px, -10px) scaleX(0.99); }
-  38% { transform: rotate(3.6deg) translate(4px, -2px) scaleX(1.02); }
-  54% { transform: rotate(-3deg) translate(-3px, -7px) scaleX(1); }
-  70% { transform: rotate(2.4deg) translate(3px, -1px) scaleX(1.01); }
-  84% { transform: rotate(-2.8deg) translate(-2px, -5px) scaleX(0.995); }
+  0%, 100% { transform: rotate(-0.8deg) translate(0, 0) scaleX(1); }
+  20% { transform: rotate(1.4deg) translate(2px, -3px) scaleX(1.006); }
+  40% { transform: rotate(-1.8deg) translate(-2px, -7px) scaleX(0.996); }
+  60% { transform: rotate(1.3deg) translate(2px, -2px) scaleX(1.008); }
+  80% { transform: rotate(-1.2deg) translate(-1px, -5px) scaleX(0.998); }
 }
 
 @keyframes conductorHead {
   0%, 100% { transform: rotate(0deg) translateY(0); }
-  10% { transform: rotate(-4deg) translate(-1px, -2px); }
-  24% { transform: rotate(5.8deg) translate(1px, -8px); }
-  38% { transform: rotate(-5deg) translate(-2px, -1px); }
-  54% { transform: rotate(3.5deg) translate(1px, -5px); }
-  68% { transform: rotate(-3.8deg) translate(-2px, -1px); }
-  84% { transform: rotate(3.2deg) translate(1px, -4px); }
+  20% { transform: rotate(-2deg) translate(-1px, -2px); }
+  40% { transform: rotate(2.8deg) translate(1px, -5px); }
+  60% { transform: rotate(-2.2deg) translate(-1px, -1px); }
+  80% { transform: rotate(1.8deg) translate(1px, -3px); }
 }
 
 @keyframes conductorLeftWing {
-  0%, 100% { transform: rotate(4deg) translateY(0); }
-  12% { transform: rotate(-18deg) translate(-8px, -6px); }
-  26% { transform: rotate(14deg) translate(10px, -2px); }
-  40% { transform: rotate(-12deg) translate(-5px, -10px); }
-  58% { transform: rotate(10deg) translate(7px, -3px); }
-  74% { transform: rotate(-16deg) translate(-7px, -7px); }
-  88% { transform: rotate(8deg) translate(4px, -2px); }
+  0%, 100% { transform: rotate(3deg) translateY(0); }
+  18% { transform: rotate(-8deg) translate(-4px, -3px); }
+  36% { transform: rotate(7deg) translate(5px, -2px); }
+  56% { transform: rotate(-6deg) translate(-4px, -6px); }
+  76% { transform: rotate(5deg) translate(3px, -2px); }
 }
 
 @keyframes conductorRightArm {
-  0%, 100% { transform: rotate(18deg) translate(0, 0); }
-  8% { transform: rotate(-44deg) translate(-7px, -16px); }
-  20% { transform: rotate(56deg) translate(16px, -30px); }
-  32% { transform: rotate(-26deg) translate(-8px, -2px); }
-  46% { transform: rotate(44deg) translate(13px, -22px); }
-  60% { transform: rotate(-18deg) translate(-7px, 1px); }
-  76% { transform: rotate(38deg) translate(10px, -18px); }
-  88% { transform: rotate(-28deg) translate(-5px, -8px); }
+  0%, 100% { transform: rotate(16deg) translate(0, 0); }
+  16% { transform: rotate(-8deg) translate(-3px, -8px); }
+  34% { transform: rotate(30deg) translate(7px, -16px); }
+  54% { transform: rotate(6deg) translate(-2px, -2px); }
+  74% { transform: rotate(24deg) translate(5px, -12px); }
+  90% { transform: rotate(10deg) translate(-1px, -4px); }
 }
 
 @keyframes conductorFeet {
   0%, 100% { transform: translateY(0) rotate(0deg); }
-  10% { transform: translate(2px, -3px) rotate(1.2deg); }
-  24% { transform: translate(-3px, -8px) rotate(-1.8deg); }
-  38% { transform: translate(4px, 1px) rotate(1.4deg); }
-  54% { transform: translate(-2px, -5px) rotate(-1deg); }
-  70% { transform: translate(3px, 0) rotate(1.2deg); }
-  84% { transform: translate(-2px, -3px) rotate(-1.2deg); }
+  18% { transform: translate(1px, -2px) rotate(0.6deg); }
+  40% { transform: translate(-1px, -5px) rotate(-0.8deg); }
+  62% { transform: translate(2px, 0) rotate(0.7deg); }
+  82% { transform: translate(-1px, -2px) rotate(-0.6deg); }
 }
 
 @keyframes orbitFloat {
@@ -1241,6 +1455,20 @@ a:hover {
   100% {
     opacity: 0;
     transform: translateY(-160%);
+  }
+}
+
+@keyframes rowSheen {
+  0% {
+    opacity: 0;
+    transform: translateX(-120%);
+  }
+  26% {
+    opacity: 0.95;
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(320%);
   }
 }
 
@@ -1481,6 +1709,7 @@ a:hover {
 
 @media (max-width: 1180px) {
   .slide { padding-inline: 24px; }
+  .chart-data-layout,
   .hero-layout,
   .slide-grid-2,
   .small-grid,
@@ -1498,6 +1727,9 @@ a:hover {
   }
   .hero-stage {
     min-height: 420px;
+  }
+  .table-summary {
+    grid-template-columns: 1fr 1fr;
   }
   .flow-step:not(:last-child)::after { content: ""; }
 }
@@ -1518,9 +1750,14 @@ a:hover {
   .flow-strip,
   .hero-stats,
   .bars-wrap,
+  .table-summary,
   .donut-card { grid-template-columns: 1fr; }
   .vertical-chart { grid-template-columns: 1fr; }
   .chart-scale { display: none; }
+  .metric-table th:nth-child(3),
+  .metric-table td:nth-child(3) {
+    width: auto;
+  }
   .hero-stage {
     width: min(100%, 360px);
     min-height: 360px;

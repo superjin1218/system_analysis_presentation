@@ -94,6 +94,58 @@ function resetAndAnimateHorizontal(slide) {
   });
 }
 
+function resetAndAnimateMetricTable(slide) {
+  const tables = slide.querySelectorAll(".metric-table");
+  tables.forEach((table) => {
+    const scaleMax = Number(table.dataset.scaleMax || "100");
+
+    table.querySelectorAll("tbody tr").forEach((row) => {
+      row.classList.remove("is-visible");
+    });
+
+    table.querySelectorAll(".table-fill").forEach((fill) => {
+      fill.style.width = "0%";
+      fill.classList.remove("is-filled");
+    });
+
+    table.querySelectorAll(".table-value").forEach((label) => {
+      label.textContent = formatValue(0, Number(label.dataset.decimals || "0"), label.dataset.suffix || "");
+    });
+
+    requestAnimationFrame(() => {
+      table.querySelectorAll("tbody tr").forEach((row, index) => {
+        const value = row.querySelector(".table-value");
+        const fill = row.querySelector(".table-fill");
+        const rawTarget = Number(fill?.dataset.target || value?.dataset.target || "0");
+        const scaledTarget = Math.min((rawTarget / scaleMax) * 100, 100);
+        const delay = 160 * index;
+
+        window.setTimeout(() => {
+          row.classList.add("is-visible");
+        }, delay);
+
+        if (fill) {
+          window.setTimeout(() => {
+            fill.style.width = `${scaledTarget}%`;
+            fill.classList.add("is-filled");
+          }, delay + 80);
+        }
+
+        if (value) {
+          window.setTimeout(() => {
+            animateNumber(
+              value,
+              Number(value.dataset.target || "0"),
+              Number(value.dataset.decimals || "0"),
+              value.dataset.suffix || "",
+            );
+          }, delay + 120);
+        }
+      });
+    });
+  });
+}
+
 function resetAndAnimateRing(slide) {
   const circumference = 2 * Math.PI * 54;
   const rings = slide.querySelectorAll(".ring-meter");
@@ -123,6 +175,10 @@ function resetAndAnimateRing(slide) {
 function animateSlide(slide) {
   if (slide.querySelector(".vertical-chart")) {
     resetAndAnimateBars(slide);
+  }
+
+  if (slide.querySelector(".metric-table")) {
+    resetAndAnimateMetricTable(slide);
   }
 
   if (slide.querySelector("[data-chart='clinical']")) {

@@ -1,20 +1,28 @@
 # System Analysis Presentation
 
-HTML presentation deck for the theory assignment project:
+Presentation materials for the theory assignment project:
 `AI Hallucination Mitigation Model Orchestration System`.
 
-## Files
+## Included Files
 
-- `index.html`: main presentation entry
-- `styles.css`: presentation layout and animations
-- `script.js`: slide navigation and chart animation logic
+- `index.html`: main HTML presentation entry
+- `styles.css`: layout, component styling, and animation rules
+- `script.js`: slide navigation and chart/table animation logic
+- `generate_presentation_ppt_redesign.ps1`: PowerPoint generation script
+- `이론과제#1-발표자료-리디자인.pptx`: redesigned PowerPoint deck
 
-## Run
+## HTML Presentation
 
 1. Open `index.html` in a browser.
-2. Use the keyboard arrow keys or on-screen controls to move between slides.
+2. Use arrow keys or the on-screen controls to move between slides.
+
+## PowerPoint
+
+- The PowerPoint deck was regenerated based on the theory assignment flow.
+- The generation script is included so the deck can be rebuilt locally if needed.
 
 ## Notes
 
-- The presentation uses the Pretendard CDN for typography.
+- The presentation uses Pretendard typography.
+- The HTML deck includes animated charts/tables and a smoothed conductor hero scene.
 - External source links inside the deck point to the cited papers and leaderboard pages.
