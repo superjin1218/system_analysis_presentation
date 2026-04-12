@@ -281,7 +281,7 @@
                       <span class="table-chip table-chip-gpt">GPT</span>
                       <span class="model-cell-name">GPT-5.4</span>
                     </div>
-                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-gpt" style="--target-width: 35%;"></div></div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-gpt" data-target="7.0" style="--target-width: 35%;"></div></div>
                     <div class="evidence-bar-value">7.0%</div>
                   </div>
                   <div class="evidence-bar-row">
@@ -289,7 +289,7 @@
                       <span class="table-chip table-chip-gemini">Gemini</span>
                       <span class="model-cell-name">Gemini 2.5 Pro</span>
                     </div>
-                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-gemini" style="--target-width: 35%;"></div></div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-gemini" data-target="7.0" style="--target-width: 35%;"></div></div>
                     <div class="evidence-bar-value">7.0%</div>
                   </div>
                   <div class="evidence-bar-row">
@@ -297,7 +297,7 @@
                       <span class="table-chip table-chip-claude">Claude</span>
                       <span class="model-cell-name">Claude Sonnet 4.6</span>
                     </div>
-                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-claude" style="--target-width: 53%;"></div></div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-claude" data-target="10.6" style="--target-width: 53%;"></div></div>
                     <div class="evidence-bar-value">10.6%</div>
                   </div>
                   <div class="evidence-bar-row">
@@ -305,10 +305,46 @@
                       <span class="table-chip table-chip-grok">Grok</span>
                       <span class="model-cell-name">Grok 4.1 Fast</span>
                     </div>
-                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-grok" style="--target-width: 89%;"></div></div>
+                    <div class="evidence-bar-track"><div class="evidence-bar-fill evidence-bar-fill-grok" data-target="17.8" style="--target-width: 89%;"></div></div>
                     <div class="evidence-bar-value">17.8%</div>
                   </div>
                 </div>
+                <table class="evidence-summary-table" data-scale-max="20">
+                  <thead>
+                    <tr>
+                      <th>순위</th>
+                      <th>모델</th>
+                      <th>rate</th>
+                      <th>비교</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><span class="evidence-rank">1</span></td>
+                      <td>GPT-5.4</td>
+                      <td><strong class="evidence-table-value">7.0%</strong></td>
+                      <td><div class="evidence-mini-track"><div class="evidence-mini-fill evidence-bar-fill-gpt" data-target="7.0"></div></div></td>
+                    </tr>
+                    <tr>
+                      <td><span class="evidence-rank">1</span></td>
+                      <td>Gemini 2.5 Pro</td>
+                      <td><strong class="evidence-table-value">7.0%</strong></td>
+                      <td><div class="evidence-mini-track"><div class="evidence-mini-fill evidence-bar-fill-gemini" data-target="7.0"></div></div></td>
+                    </tr>
+                    <tr>
+                      <td><span class="evidence-rank">3</span></td>
+                      <td>Claude Sonnet 4.6</td>
+                      <td><strong class="evidence-table-value">10.6%</strong></td>
+                      <td><div class="evidence-mini-track"><div class="evidence-mini-fill evidence-bar-fill-claude" data-target="10.6"></div></div></td>
+                    </tr>
+                    <tr>
+                      <td><span class="evidence-rank">4</span></td>
+                      <td>Grok 4.1 Fast</td>
+                      <td><strong class="evidence-table-value">17.8%</strong></td>
+                      <td><div class="evidence-mini-track"><div class="evidence-mini-fill evidence-bar-fill-grok" data-target="17.8"></div></div></td>
+                    </tr>
+                  </tbody>
+                </table>
                 <div class="evidence-inline-note">막대 그래프와 수치 표를 함께 보면 최신 모델도 0%가 아니며, 모델 간 편차도 분명하게 드러난다.</div>
                 <div class="table-summary">
                   <article class="card metric-card compact"><strong>7.0%</strong><span>최저 수치도 0%와는 거리가 있다.</span></article>

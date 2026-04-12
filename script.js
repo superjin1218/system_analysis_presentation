@@ -178,6 +178,46 @@ function resetAndAnimateEvidenceBars(slide) {
   });
 }
 
+function resetAndAnimateEvidenceTable(slide) {
+  const tables = slide.querySelectorAll(".evidence-summary-table");
+  tables.forEach((table) => {
+    const scaleMax = Number(table.dataset.scaleMax || "100");
+
+    table.querySelectorAll("tbody tr").forEach((row) => {
+      row.classList.remove("is-visible");
+    });
+
+    table.querySelectorAll(".evidence-mini-fill").forEach((fill) => {
+      clearTimeout(fill._timer);
+      fill.style.transition = "none";
+      fill.style.transform = "scaleX(0)";
+      fill.style.opacity = "0.78";
+    });
+
+    requestAnimationFrame(() => {
+      table.querySelectorAll("tbody tr").forEach((row, index) => {
+        const value = row.querySelector(".evidence-table-value");
+        const fill = row.querySelector(".evidence-mini-fill");
+        const rawTarget = Number(fill?.dataset.target || value?.dataset.target || "0");
+        const scaledTarget = Math.min(rawTarget / scaleMax, 1);
+        const delay = 160 * index;
+
+        window.setTimeout(() => {
+          row.classList.add("is-visible");
+        }, delay);
+
+        if (fill) {
+          fill._timer = window.setTimeout(() => {
+            fill.style.transition = "transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease";
+            fill.style.transform = `scaleX(${scaledTarget})`;
+            fill.style.opacity = "1";
+          }, delay + 70);
+        }
+      });
+    });
+  });
+}
+
 function resetAndAnimateRing(slide) {
   const circumference = 2 * Math.PI * 54;
   const rings = slide.querySelectorAll(".ring-meter");
@@ -215,6 +255,10 @@ function animateSlide(slide) {
 
   if (slide.querySelector(".evidence-bar-board")) {
     resetAndAnimateEvidenceBars(slide);
+  }
+
+  if (slide.querySelector(".evidence-summary-table")) {
+    resetAndAnimateEvidenceTable(slide);
   }
 
   if (slide.querySelector("[data-chart='clinical']")) {
