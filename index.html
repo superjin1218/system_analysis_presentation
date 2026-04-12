@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI 환각 방지 모델 오케스트레이션 시스템 발표</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css">
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <div class="hud">
+    <div class="hud-brand">
+      <div class="hud-logo">AI</div>
+      <div class="hud-copy">
+        <strong>AI 환각 방지 모델 오케스트레이션 시스템</strong>
+        <span id="slideTitle">표지</span>
+      </div>
+    </div>
+    <div class="hud-meta">
+      <div class="progress-shell"><div class="progress-bar" id="progressBar"></div></div>
+      <div class="slide-counter" id="slideCounter">01 / 15</div>
+    </div>
+  </div>
+
+  <main class="deck" id="deck">
+    <section class="slide hero-slide is-active" data-title="표지">
+      <div class="hero-orb orb-a"></div>
+      <div class="hero-orb orb-b"></div>
+      <div class="hero-orb orb-c"></div>
+      <div class="slide-shell">
+        <div class="eyebrow">소프트웨어 시스템 개요 발표</div>
+        <div class="hero-layout">
+          <div class="hero-copy">
+            <div class="badge-row">
+              <span class="badge">모델 선택 가능</span>
+              <span class="badge">대화 라운드 조절</span>
+              <span class="badge">판정 모델</span>
+              <span class="badge">불확실성 표시</span>
+            </div>
+            <h1 class="title hero-title">
+              <span class="hero-line gradient-text">AI 환각 방지</span>
+              <span class="hero-line">모델 오케스트레이션 시스템</span>
+            </h1>
+            <p class="subtitle">
+              여러 AI 모델이 하나의 질문을 놓고 서로의 답변을 검토하고 반박한 뒤, 판정 모델이 최종 결론과 남은 쟁점을 제시하는
+              다중 모델 검증형 소프트웨어 시스템이다.
+            </p>
+            <div class="floating-pills">
+              <span class="pill">12234195 조진우</span>
+              <span class="pill">컴퓨터공학과</span>
+              <span class="pill">다중 모델 토론</span>
+              <span class="pill">검증형 질의응답 시스템</span>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="hero-stage">
+              <div class="model-badge model-gpt">
+                <span class="model-mark model-mark-gpt">◎</span>
+                <span class="model-name">GPT</span>
+              </div>
+              <div class="model-badge model-claude">
+                <span class="model-mark model-mark-claude">C</span>
+                <span class="model-name">Claude</span>
+              </div>
+              <div class="model-badge model-grok">
+                <span class="model-mark model-mark-grok">X</span>
+                <span class="model-name">Grok</span>
+              </div>
+              <div class="model-badge model-gemini">
+                <span class="model-mark model-mark-gemini">✦</span>
+                <span class="model-name">Gemini</span>
+              </div>
+              <span class="signal-beam signal-beam-a"></span>
+              <span class="signal-beam signal-beam-b"></span>
+              <span class="signal-beam signal-beam-c"></span>
+              <span class="signal-beam signal-beam-d"></span>
+              <svg class="hero-character" viewBox="0 0 520 520" xmlns="http://www.w3.org/2000/svg">
+                <defs>
+                  <linearGradient id="duckCoat" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#1d4ed8"/>
+                    <stop offset="55%" stop-color="#1e3a8a"/>
+                    <stop offset="100%" stop-color="#0f172a"/>
+                  </linearGradient>
+                  <linearGradient id="duckWhite" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#ffffff"/>
+                    <stop offset="100%" stop-color="#dbeafe"/>
+                  </linearGradient>
+                  <linearGradient id="batonGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#67e8f9"/>
+                    <stop offset="100%" stop-color="#8b5cf6"/>
+                  </linearGradient>
+                  <radialGradient id="stageGlow" cx="50%" cy="45%" r="60%">
+                    <stop offset="0%" stop-color="rgba(59,130,246,0.28)"/>
+                    <stop offset="100%" stop-color="rgba(59,130,246,0)"/>
+                  </radialGradient>
+                </defs>
+                <ellipse class="stage-halo" cx="260" cy="260" rx="172" ry="152" fill="url(#stageGlow)"/>
+                <ellipse class="stage-shadow" cx="260" cy="458" rx="124" ry="24" fill="rgba(15,23,42,0.12)"/>
+
+                <g class="character-float">
+                  <g class="conductor-body">
+                    <path d="M182 325C178 278 201 240 244 228H306C348 240 370 280 365 326L356 401C352 438 323 466 286 466H260C220 466 190 438 186 399L182 325Z" fill="url(#duckCoat)"/>
+                    <path d="M243 228C214 242 197 276 195 313C217 318 234 310 249 289L243 228Z" fill="#0b1220" opacity="0.92"/>
+                    <path d="M308 228C338 242 355 276 356 313C335 320 315 311 300 289L308 228Z" fill="#0b1220" opacity="0.92"/>
+                    <path d="M242 284H308V414C308 435 291 452 270 452C254 452 242 439 242 423V284Z" fill="#f8fafc" opacity="0.96"/>
+                    <circle cx="274" cy="318" r="8" fill="#60a5fa"/>
+                    <circle cx="274" cy="351" r="8" fill="#60a5fa"/>
+                    <circle cx="274" cy="384" r="8" fill="#60a5fa"/>
+                  </g>
+
+                  <g class="conductor-left-wing">
+                    <path d="M206 322C183 318 167 333 172 354C177 375 200 386 226 382L237 340C229 329 218 323 206 322Z" fill="url(#duckCoat)"/>
+                    <path d="M176 352C187 334 205 328 221 331" fill="none" stroke="#1e293b" stroke-width="5" stroke-linecap="round" opacity="0.44"/>
+                    <path class="left-swish left-swish-a" d="M167 340C154 350 147 367 148 386" fill="none" stroke="#93c5fd" stroke-width="4" stroke-linecap="round"/>
+                    <path class="left-swish left-swish-b" d="M182 316C161 317 143 325 130 340" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round"/>
+                  </g>
+
+                  <g class="conductor-right-arm">
+                    <path d="M340 320C364 312 383 324 386 346C390 372 370 392 339 390L318 347C321 334 329 325 340 320Z" fill="url(#duckCoat)"/>
+                    <path d="M318 347L407 281" stroke="url(#batonGlow)" stroke-width="8" stroke-linecap="round"/>
+                    <circle cx="409" cy="280" r="8" fill="#e0f2fe"/>
+                    <path class="baton-star" d="M408 250L417 267L436 270L422 283L425 303L408 294L391 303L394 283L380 270L399 267Z" fill="#67e8f9" opacity="0.95"/>
+                    <circle class="baton-pulse baton-pulse-a" cx="409" cy="280" r="18" fill="none" stroke="#67e8f9" stroke-width="3"/>
+                    <circle class="baton-pulse baton-pulse-b" cx="409" cy="280" r="30" fill="none" stroke="#8b5cf6" stroke-width="2.5"/>
+                    <path class="baton-swish baton-swish-a" d="M342 276C364 257 392 247 424 247" fill="none" stroke="#67e8f9" stroke-width="4" stroke-linecap="round"/>
+                    <path class="baton-swish baton-swish-b" d="M334 303C366 301 396 310 422 332" fill="none" stroke="#8b5cf6" stroke-width="4" stroke-linecap="round"/>
+                    <path class="baton-swish baton-swish-c" d="M320 328C360 344 401 357 436 355" fill="none" stroke="#60a5fa" stroke-width="4" stroke-linecap="round"/>
+                  </g>
+
+                  <g class="conductor-head">
+                    <circle cx="274" cy="196" r="116" fill="url(#duckWhite)"/>
+                    <ellipse cx="250" cy="173" rx="18" ry="10" fill="#cbd5f5" opacity="0.55"/>
+                    <ellipse cx="297" cy="173" rx="18" ry="10" fill="#cbd5f5" opacity="0.55"/>
+                    <circle cx="246" cy="194" r="13" fill="#111827"/>
+                    <circle cx="301" cy="194" r="13" fill="#111827"/>
+                    <circle cx="250" cy="189" r="4" fill="#ffffff"/>
+                    <circle cx="305" cy="189" r="4" fill="#ffffff"/>
+                    <ellipse cx="274" cy="234" rx="44" ry="28" fill="#f59e0b"/>
+                    <path d="M235 232C253 244 295 245 314 232" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
+                    <circle cx="226" cy="230" r="10" fill="#fecdd3" opacity="0.78"/>
+                    <circle cx="322" cy="230" r="10" fill="#fecdd3" opacity="0.78"/>
+                    <path d="M229 121C241 97 258 87 272 87C289 87 306 98 318 122" fill="none" stroke="#eff6ff" stroke-width="13" stroke-linecap="round"/>
+                    <path d="M217 108C222 83 244 62 274 62C304 62 326 82 332 108L333 118H215L217 108Z" fill="#0f172a"/>
+                    <rect x="206" y="96" width="136" height="33" rx="16.5" fill="#1d4ed8"/>
+                    <rect x="236" y="64" width="76" height="38" rx="19" fill="#e0f2fe" stroke="#93c5fd" stroke-width="4"/>
+                    <text x="274" y="89" text-anchor="middle" fill="#1d4ed8" style="font-family:Pretendard,sans-serif;font-size:24px;font-weight:900;">AI</text>
+                  </g>
+
+                  <g class="conductor-feet">
+                    <path d="M217 420C211 443 218 459 237 471" fill="none" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
+                    <path d="M313 420C308 444 316 460 334 472" fill="none" stroke="#f59e0b" stroke-width="12" stroke-linecap="round"/>
+                  </g>
+                </g>
+              </svg>
+              <div class="hero-spark hero-spark-a"></div>
+              <div class="hero-spark hero-spark-b"></div>
+            </div>
+          </div>
+        </div>
+        <div class="section-footer">
+          <span>소프트웨어 시스템 개요</span>
+          <span>AI 기반 검증형 질의응답 시스템</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="발표 구성">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 02</div>
+        <div class="section-body">
+          <h2 class="title">발표 개요</h2>
+          <p class="subtitle">이번 발표에서는 AI 환각 문제가 왜 중요한지 살펴본 뒤, 이를 줄이기 위해 제안한 시스템의 개념, 사용자, 핵심 기능, 유사 시스템 비교를 순서대로 설명한다.</p>
+          <div class="slide-grid-4">
+            <article class="card"><p class="kicker">1. 문제 배경</p><h3>왜 환각이 문제인가</h3><p>LLM은 유창하지만 항상 사실적이지 않다.</p></article>
+            <article class="card"><p class="kicker">2. 시스템 개요</p><h3>무엇을 제안하는가</h3><p>사용자가 모델과 라운드를 선택하는 검증형 시스템이다.</p></article>
+            <article class="card"><p class="kicker">3. 사용자 정의</p><h3>누가 쓰는가</h3><p>과제, 보고서, 조사, 기획 문서를 다루는 사용자를 겨냥한다.</p></article>
+            <article class="card"><p class="kicker">4. 기능 및 비교</p><h3>무엇이 다른가</h3><p>토론 과정, 판정, 불확실성을 함께 보여준다.</p></article>
+          </div>
+          <div class="callout">핵심은 더 유창한 답을 만드는 것이 아니라, 더 신뢰할 수 있는 답이 나오도록 검증 구조를 설계하는 데 있다.</div>
+        </div>
+        <div class="section-footer"><span>발표 구조</span><span>문제 → 개념 → 사용자 → 기능 → 비교 → 결론</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="문제 배경">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 03</div>
+        <div class="section-body">
+          <h2 class="title">왜 <span class="gradient-text">AI 환각</span>을 막는 구조가 필요한가</h2>
+          <div class="problem-strip">
+            <article class="card dark">
+              <p class="kicker">문제 배경</p>
+              <h3>LLM은 유창하지만, 사용자는 매 답변을 믿어도 되는지 알기 어렵다</h3>
+              <ul class="bullet-list">
+                <li>그럴듯한 문장은 오류를 더 늦게 발견하게 만든다.</li>
+                <li>과제·보고서·조사처럼 정확성이 중요한 작업에서는 사용자가 매번 직접 검증해야 한다.</li>
+                <li>결과만 보여주는 AI는 “왜 맞는가”보다 “맞아 보이는가”를 강화한다.</li>
+              </ul>
+            </article>
+            <div class="slide-grid-2">
+              <article class="card metric-card"><strong>Fluent</strong><span>틀린 내용도 자연스럽게 말하면 쉽게 신뢰된다.</span></article>
+              <article class="card metric-card"><strong>Costly</strong><span>정확성 확인을 위해 재질문과 검색 비용이 생긴다.</span></article>
+              <article class="card metric-card"><strong>Opaque</strong><span>중간 판단 과정을 보지 못하면 결과를 평가하기 어렵다.</span></article>
+              <article class="card metric-card"><strong>Risky</strong><span>한 번의 오류가 잘못된 문서와 판단으로 이어질 수 있다.</span></article>
+            </div>
+          </div>
+          <div class="slide-grid-2">
+            <article class="mini-note">Nature 2024는 hallucination을 사용자가 출력의 정확성을 신뢰하지 못하게 만드는 핵심 문제로 다룬다.</article>
+            <article class="mini-note">따라서 필요한 것은 더 유창한 답이 아니라, 검증 구조와 불확실성 표현 구조이다.</article>
+          </div>
+        </div>
+        <div class="section-footer">
+          <span>핵심 메시지</span>
+          <div class="source-inline"><a href="https://www.nature.com/articles/s41586-024-07421-0" target="_blank" rel="noreferrer">Nature (2024): Semantic Entropy</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="근거 그래프 1">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 04</div>
+        <div class="section-body">
+          <h2 class="title">근거 1. <span class="gradient-text">최신 모델도 hallucination을 완전히 없애지 못했다</span></h2>
+          <p class="subtitle">2026년 3월 20일에 업데이트된 Vectara Hallucination Leaderboard(HHEM-2.3)는 최신 프런티어 모델도 문서 요약에서 여전히 hallucination을 낸다는 점을 보여준다. 낮을수록 더 좋은 값이다.</p>
+          <article class="card chart-shell">
+            <div class="chart-header">
+              <div>
+                <p class="kicker">근거 그래프</p>
+                <h3>2026 최신 모델 hallucination rate 비교</h3>
+              </div>
+              <p class="chart-caption">같은 2026년 3월 20일 스냅샷에서 GPT-5.4 7.0%, Gemini 2.5 Pro 7.0%, Claude Sonnet 4.6 10.6%, Grok 4.1 Fast 17.8%였다.</p>
+            </div>
+            <div class="vertical-chart" data-chart="hallucination-latest" data-scale-max="20">
+              <div class="chart-scale"><span>20%</span><span>15%</span><span>10%</span><span>5%</span><span>0%</span></div>
+              <div class="bars-wrap">
+                <div class="bar-column">
+                  <div class="bar-meter"><div class="bar-fill" data-target="7.0" style="--bar-color: linear-gradient(180deg, #0f172a, #334155);"></div></div>
+                  <div class="bar-meta"><div class="bar-number" data-target="7.0" data-decimals="1" data-suffix="%">0.0%</div><div class="bar-label">GPT-5.4</div></div>
+                </div>
+                <div class="bar-column">
+                  <div class="bar-meter"><div class="bar-fill" data-target="7.0" style="--bar-color: linear-gradient(180deg, #14b8a6, #0f766e);"></div></div>
+                  <div class="bar-meta"><div class="bar-number" data-target="7.0" data-decimals="1" data-suffix="%">0.0%</div><div class="bar-label">Gemini 2.5 Pro</div></div>
+                </div>
+                <div class="bar-column">
+                  <div class="bar-meter"><div class="bar-fill" data-target="10.6" style="--bar-color: linear-gradient(180deg, #8b5cf6, #6d28d9);"></div></div>
+                  <div class="bar-meta"><div class="bar-number" data-target="10.6" data-decimals="1" data-suffix="%">0.0%</div><div class="bar-label">Claude Sonnet 4.6</div></div>
+                </div>
+                <div class="bar-column">
+                  <div class="bar-meter"><div class="bar-fill" data-target="17.8" style="--bar-color: linear-gradient(180deg, #f59e0b, #d97706);"></div></div>
+                  <div class="bar-meta"><div class="bar-number" data-target="17.8" data-decimals="1" data-suffix="%">0.0%</div><div class="bar-label">Grok 4.1 Fast</div></div>
+                </div>
+              </div>
+            </div>
+            <div class="slide-grid-3">
+              <article class="card metric-card"><strong>7.0%</strong><span>이 비교군에서 가장 낮은 값도 0%와는 거리가 있다.</span></article>
+              <article class="card metric-card"><strong>10.6%</strong><span>최신 Claude 계열도 두 자릿수 hallucination rate가 남아 있다.</span></article>
+              <article class="card metric-card"><strong>17.8%</strong><span>최신 Grok 계열은 같은 벤치마크에서 더 높은 리스크를 보였다.</span></article>
+            </div>
+          </article>
+        </div>
+        <div class="section-footer">
+          <span>해석</span>
+          <div class="source-inline">
+            <a href="https://github.com/vectara/hallucination-leaderboard" target="_blank" rel="noreferrer">Vectara Hallucination Leaderboard (updated Mar 20, 2026)</a>
+            <a href="https://huggingface.co/spaces/vectara/hallucination-evaluation-leaderboard" target="_blank" rel="noreferrer">Interactive HHEM leaderboard</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="근거 그래프 2">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 05</div>
+        <div class="section-body">
+          <h2 class="title">근거 2. 환각은 <span class="gradient-text">낮은 빈도여도 위험</span>하다</h2>
+          <p class="subtitle">의료 요약 분야 2025년 연구는 LLM 출력 문장을 실제로 검토했을 때, 환각과 생략이 존재하며 그중 일부는 major 오류가 될 수 있음을 보여준다.</p>
+          <div class="small-grid">
+            <article class="card chart-shell">
+              <div class="chart-header">
+                <div><p class="kicker">근거 그래프</p><h3>문장 단위 오류율</h3></div>
+                <p class="chart-caption">환각 1.47%, 생략 3.45%.</p>
+              </div>
+              <div class="horizontal-chart" data-chart="clinical">
+                <div class="h-row">
+                  <label><span>Hallucination rate</span><strong data-target="1.47" data-decimals="2" data-suffix="%">0%</strong></label>
+                  <div class="h-track"><div class="h-fill" data-target="42.61"></div></div>
+                </div>
+                <div class="h-row">
+                  <label><span>Omission rate</span><strong data-target="3.45" data-decimals="2" data-suffix="%">0%</strong></label>
+                  <div class="h-track"><div class="h-fill" data-target="100"></div></div>
+                </div>
+              </div>
+              <p class="footnote">절대 수치가 낮아 보여도, 오류 비용이 큰 영역에서는 작은 비율도 중요하다.</p>
+            </article>
+            <article class="card chart-shell">
+              <div class="chart-header">
+                <div><p class="kicker">근거 그래프</p><h3>환각 중 major 오류 비중</h3></div>
+                <p class="chart-caption">환각 문장 191개 중 84개가 major 오류(44%)였다.</p>
+              </div>
+              <div class="donut-card" data-chart="major-risk">
+                <div class="ring-wrap">
+                  <svg viewBox="0 0 120 120" aria-hidden="true">
+                    <defs>
+                      <linearGradient id="ringGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                        <stop offset="0%" stop-color="#14b8a6"></stop>
+                        <stop offset="100%" stop-color="#2563eb"></stop>
+                      </linearGradient>
+                    </defs>
+                    <circle class="ring-bg" cx="60" cy="60" r="54"></circle>
+                    <circle class="ring-meter" cx="60" cy="60" r="54" data-target="44"></circle>
+                  </svg>
+                  <div class="ring-center"><strong data-target="44" data-suffix="%">0%</strong><span>major 오류 비중</span></div>
+                </div>
+                <div class="insight-list">
+                  <li>오류가 드물어 보여도, 영향이 크면 시스템 위험은 충분히 심각하다.</li>
+                  <li>그래서 시스템은 정답 생성뿐 아니라 검토 구조를 가져야 한다.</li>
+                  <li>제안 시스템은 모델 간 상호검증과 경고 구조를 핵심으로 둔다.</li>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+        <div class="section-footer">
+          <span>해석</span>
+          <div class="source-inline"><a href="https://www.nature.com/articles/s41746-025-01670-7" target="_blank" rel="noreferrer">npj Digital Medicine (2025)</a></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="시스템명과 정의">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 06</div>
+        <div class="section-body">
+          <h2 class="title">시스템명과 한 줄 정의</h2>
+          <div class="slide-grid-2">
+            <article class="card dark">
+              <p class="kicker">시스템명</p>
+              <h3>AI 환각 방지 모델 오케스트레이션 시스템</h3>
+              <p>영문명은 <strong>AI Hallucination Mitigation Model Orchestration System</strong>이며, 기능 중심형 이름으로 설계했다.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">한 줄 정의</p>
+              <h3>사용자가 모델 조합과 대화 횟수를 직접 정하는 환각 억제형 AI 시스템</h3>
+              <ul class="bullet-list">
+                <li>여러 모델이 하나의 질문을 놓고 검토·반박·보완한다.</li>
+                <li>판정 모델이 최종 답변, 확신도, 남은 쟁점을 정리한다.</li>
+                <li>핵심은 정답 생성보다 답변 검증 구조 설계에 있다.</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>시스템명</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="시스템 설명">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 07</div>
+        <div class="section-body">
+          <h2 class="title">시스템 설명: <span class="gradient-text">어떤 개념</span>으로 동작하는가</h2>
+          <div class="split-emphasis">
+            <article class="card">
+              <p class="kicker">개념</p>
+              <h3>단일 응답형 AI를 검증형 AI로 바꾸는 구조</h3>
+              <p>초안 모델이 첫 답변을 만들고, 토론 모델이 사실성·논리성·누락 조건을 검토하며, 판정 모델이 최종 결론과 쟁점을 정리한다.</p>
+            </article>
+            <article class="card">
+              <p class="kicker">작동 원리</p>
+              <h3>“하나의 답”보다 “답이 검토되는 과정”을 보여준다</h3>
+              <p>사용자는 어떤 모델이 어떤 이유로 다른 모델의 주장을 수정했는지 실시간으로 확인할 수 있다. 이는 설명 가능성과 신뢰도를 높인다.</p>
+            </article>
+          </div>
+          <div class="flow-strip">
+            <article class="flow-step"><div class="step-index">1</div><h4>질문 입력</h4><p>사용자가 검증이 필요한 질문을 입력한다.</p></article>
+            <article class="flow-step"><div class="step-index">2</div><h4>모델 조합 선택</h4><p>참여 모델과 라운드 수를 직접 고른다.</p></article>
+            <article class="flow-step"><div class="step-index">3</div><h4>초안 생성</h4><p>첫 번째 모델이 기본 답변을 만든다.</p></article>
+            <article class="flow-step"><div class="step-index">4</div><h4>상호검증</h4><p>다른 모델들이 오류와 누락을 검토한다.</p></article>
+            <article class="flow-step"><div class="step-index">5</div><h4>최종 판정</h4><p>판정 모델이 최종 답과 쟁점을 정리한다.</p></article>
+          </div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>시스템 설명</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="작동 흐름">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 08</div>
+        <div class="section-body">
+          <h2 class="title">시스템 설명: <span class="gradient-text">실제 작동 흐름</span></h2>
+          <div class="slide-grid-2">
+            <article class="card dark">
+              <p class="kicker">세부 흐름</p>
+              <ul class="timeline-list">
+                <li>질문 입력 후 사용자가 모델과 라운드 수를 선택한다.</li>
+                <li>초안 모델이 첫 답변을 작성한다.</li>
+                <li>토론 모델은 오류 가능성, 누락 조건, 약한 근거를 지적한다.</li>
+                <li>이 과정은 사용자가 지정한 라운드 수만큼 반복된다.</li>
+                <li>판정 모델이 최종 답변, 채택 이유, 확신도, 남은 쟁점을 제시한다.</li>
+              </ul>
+            </article>
+            <article class="card">
+              <p class="kicker">의의</p>
+              <h3>모델이 틀릴 수 있다는 가정을 시스템 설계에 반영한다</h3>
+              <p>이 시스템은 모델의 완전성을 전제로 하지 않고, 오류 가능성을 줄이기 위한 협업 구조를 기본 메커니즘으로 채택한다.</p>
+              <div class="callout">즉 “더 똑똑한 단일 모델”을 기다리기보다, “지금 있는 모델을 어떻게 검증 구조로 엮을 것인가”에 초점을 맞춘다.</div>
+            </article>
+          </div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>시스템 설명</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="시스템 사용자 정의">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 09</div>
+        <div class="section-body">
+          <h2 class="title">시스템 사용자 정의: <span class="gradient-text">누가 언제 어디서 어떻게</span> 쓰는가</h2>
+          <div class="persona-grid">
+            <article class="persona-card"><div class="emoji">🎓</div><strong>누가</strong><p>과제와 발표 자료를 만드는 대학생과 학습자</p></article>
+            <article class="persona-card"><div class="emoji">🔬</div><strong>또 누가</strong><p>자료 조사와 검토 비용이 큰 연구자와 실무 사용자</p></article>
+            <article class="persona-card"><div class="emoji">🕒</div><strong>언제</strong><p>정확성이 중요한 질문을 다룰 때, 여러 관점을 비교해야 할 때</p></article>
+            <article class="persona-card"><div class="emoji">🌐</div><strong>어디서·어떻게</strong><p>웹 기반 화면에서 질문 입력 → 모델 선택 → 토론 확인 → 결과 검토</p></article>
+          </div>
+          <div class="slide-grid-2">
+            <article class="card"><p class="kicker">사용 맥락</p><h3>결과보다 검토 과정이 중요한 사용자</h3><p>이 시스템은 빠른 답을 원하는 사람보다, 답을 믿어도 되는지 확인해야 하는 사람에게 더 적합하다.</p></article>
+            <article class="card"><p class="kicker">사용 방식</p><h3>웹 기반 사용을 기본 전제로 한다</h3><p>사용자는 복잡한 오케스트레이션 로직을 몰라도 모델 이름과 라운드 수만 선택하면 된다.</p></article>
+          </div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>시스템 사용자 정의</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="사용 장면">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 10</div>
+        <div class="section-body">
+          <h2 class="title">사용자는 이런 장면에서 시스템을 활용할 수 있다</h2>
+          <div class="scenario-grid">
+            <article class="card scenario-card">
+              <span class="label-muted">대학생 시나리오</span>
+              <h3>과제 자료 조사 전</h3>
+              <p>여러 모델의 토론을 통해 개념 정의가 일치하는지, 누락된 조건이 없는지 먼저 확인한 뒤 과제를 작성한다.</p>
+              <div class="badge-row"><span class="badge">정확도 확인</span><span class="badge">과제 작성 전 점검</span></div>
+            </article>
+            <article class="card scenario-card">
+              <span class="label-muted">연구·학습 시나리오</span>
+              <h3>새로운 개념을 빠르게 이해할 때</h3>
+              <p>하나의 설명만 듣는 대신 여러 모델이 같은 질문을 어떻게 해석하는지 비교하며 개념을 입체적으로 이해한다.</p>
+              <div class="badge-row"><span class="badge">개념 비교</span><span class="badge">오해 방지</span></div>
+            </article>
+            <article class="card scenario-card">
+              <span class="label-muted">실무 시나리오</span>
+              <h3>기획 문서 초안 작성 전</h3>
+              <p>여러 모델이 지적한 쟁점과 보완 포인트를 먼저 본 뒤, 정리된 답변을 문서 초안 작성에 활용한다.</p>
+              <div class="badge-row"><span class="badge">문서 품질 향상</span><span class="badge">검토 시간 절감</span></div>
+            </article>
+          </div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>시스템 사용자 정의</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="핵심 기능 1">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 11</div>
+        <div class="section-body">
+          <h2 class="title">핵심 기능 1: <span class="gradient-text">모델 선택과 라운드 제어</span></h2>
+          <div class="feature-grid">
+            <article class="card feature-card">
+              <div class="icon-shell">🧠</div>
+              <h3>참여 모델 직접 선택</h3>
+              <p>초안 모델, 토론 모델, 판정 모델을 사용자가 직접 조합할 수 있다.</p>
+            </article>
+            <article class="card feature-card">
+              <div class="icon-shell">🔁</div>
+              <h3>대화 라운드 수 설정</h3>
+              <p>검토 강도와 응답 시간을 조절할 수 있도록 라운드 수를 사용자가 결정한다.</p>
+            </article>
+            <article class="card feature-card">
+              <div class="icon-shell">🧩</div>
+              <h3>역할 기반 오케스트레이션</h3>
+              <p>초안 작성 → 반박 → 수정 → 판정 흐름으로 모델을 순차 연결해 검증 구조를 만든다.</p>
+            </article>
+          </div>
+          <div class="callout">핵심은 “모델을 많이 붙이는 것”이 아니라 사용자가 검증 구조를 직접 설계할 수 있게 만드는 데 있다.</div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>핵심 기능</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="핵심 기능 2">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 12</div>
+        <div class="section-body">
+          <h2 class="title">핵심 기능 2: <span class="gradient-text">검증 과정을 보이게 한다</span></h2>
+          <div class="chat-layout">
+            <article class="card">
+              <p class="kicker">메신저형 UI</p>
+              <h3>실시간 말풍선형 토론 시각화</h3>
+              <p>최종 답변만 보여주는 대신, 각 모델이 어떤 이유로 다른 모델의 주장을 수정하거나 반박했는지를 실시간으로 보여준다.</p>
+              <ul class="bullet-list">
+                <li>어떤 모델이 어떤 주장에 동의하거나 반박했는지 쉽게 추적할 수 있다.</li>
+                <li>사용자는 결과뿐 아니라 결과가 만들어지는 과정을 이해할 수 있다.</li>
+                <li>이는 설명 가능성과 신뢰도를 높이는 핵심 기능이다.</li>
+              </ul>
+            </article>
+            <article class="chat-shell">
+              <div class="chat-bubble left"><span class="bubble-tag">초안 모델</span>이 주제의 핵심은 A라고 볼 수 있습니다. 다만 B 조건은 아직 충분히 반영되지 않았습니다.</div>
+              <div class="chat-bubble right"><span class="bubble-tag">토론 모델 1</span>A 설명은 가능하지만 방금 답변은 B 조건과 C 예외를 빠뜨렸습니다.</div>
+              <div class="chat-bubble left"><span class="bubble-tag">토론 모델 2</span>C 예외뿐 아니라 D 사례도 보완해야 합니다.</div>
+              <div class="chat-bubble right"><span class="bubble-tag">판정 모델</span>최종적으로는 A를 중심으로 설명하되 B·C·D 조건을 함께 적는 것이 가장 안전합니다.</div>
+            </article>
+          </div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>핵심 기능</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="핵심 기능 3">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 13</div>
+        <div class="section-body">
+          <h2 class="title">핵심 기능 3: <span class="gradient-text">판정과 불확실성 표시</span></h2>
+          <div class="slide-grid-3">
+            <article class="card feature-card">
+              <div class="icon-shell">⚖️</div>
+              <h3>판정 모델 최종 정리</h3>
+              <p>판정 모델은 전체 대화를 읽고 최종 답변, 채택 이유, 핵심 근거를 정리한다.</p>
+            </article>
+            <article class="card feature-card">
+              <div class="icon-shell">📉</div>
+              <h3>확신도와 남은 쟁점</h3>
+              <p>모델 간 합의가 충분하지 않으면 확신도를 낮게 표시하고, 아직 해소되지 않은 쟁점을 따로 보여준다.</p>
+            </article>
+            <article class="card feature-card">
+              <div class="icon-shell">🚫</div>
+              <h3>판단 보류 기능</h3>
+              <p>근거가 부족하거나 의견 충돌이 크면 무리하게 하나의 답을 내지 않고 판단 보류 상태를 표시한다.</p>
+            </article>
+          </div>
+          <div class="slide-grid-2">
+            <article class="card"><p class="kicker">설계 원칙</p><h3>“모른다”를 표시하는 것이 정확도를 높이는 현실적인 방법</h3><p>완전히 제거하기 어렵다면 시스템은 최소한 자신의 불확실성을 숨기지 않아야 한다.</p></article>
+            <article class="card"><p class="kicker">중요성</p><h3>결과 품질과 신뢰성은 함께 관리되어야 한다</h3><p>좋은 시스템은 항상 답을 내는 시스템이 아니라, 답할 수 없는 경우를 정직하게 표현하는 시스템이다.</p></article>
+          </div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>핵심 기능</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="유사 시스템 비교">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 14</div>
+        <div class="section-body">
+          <h2 class="title">유사 관련 시스템과 비교했을 때 <span class="gradient-text">무엇이 다른가</span></h2>
+          <table class="compare-table">
+            <thead>
+              <tr>
+                <th>시스템</th>
+                <th>주요 특징</th>
+                <th>강점</th>
+                <th>한계 / 차이점</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Microsoft AutoGen</strong></td>
+                <td>여러 에이전트를 역할별로 연결하는 프레임워크</td>
+                <td>다중 에이전트 상호작용 구조에 강하다</td>
+                <td>일반 사용자가 모델과 라운드 수를 직접 선택하는 UI는 기본이 아니다</td>
+              </tr>
+              <tr>
+                <td><strong>CrewAI</strong></td>
+                <td>AI 에이전트 간 역할 분담과 협업 실행</td>
+                <td>역할 기반 협업 구조를 만들기 쉽다</td>
+                <td>환각 억제와 불확실성 표시를 전면 목표로 두지는 않는다</td>
+              </tr>
+              <tr>
+                <td><strong>Perplexity AI</strong></td>
+                <td>검색 기반 답변과 근거 제시 중심 서비스</td>
+                <td>빠른 정보 탐색과 출처 기반 응답에 강하다</td>
+                <td>모델 간 토론 과정 자체를 사용자에게 보여주는 구조와는 다르다</td>
+              </tr>
+              <tr class="highlight">
+                <td><strong>제안 시스템</strong></td>
+                <td>사용자가 모델 조합과 라운드 수를 정하고, 토론 과정과 판정 결과를 함께 보는 시스템</td>
+                <td>사용자 제어, 토론 시각화, 판정 모델, 불확실성 표시를 결합</td>
+                <td>“다중 모델 협업”을 일반 사용자가 직접 쓰는 환각 저감 인터페이스로 바꾼다</td>
+              </tr>
+            </tbody>
+          </table>
+          <div class="callout">기존 유사 시스템은 에이전트 협업 또는 검색 기반 응답에 강점이 있지만, 본 시스템은 그것을 사용자가 직접 조절하는 검증형 대화 구조로 바꾼다는 점에서 차별화된다.</div>
+        </div>
+        <div class="section-footer"><span>과제 항목 연결</span><span>유사 관련 시스템</span></div>
+      </div>
+    </section>
+
+    <section class="slide" data-title="결론 및 참고자료">
+      <div class="slide-shell">
+        <div class="eyebrow">Slide 15</div>
+        <div class="section-body">
+          <h2 class="title">결론: 단일 응답보다 <span class="gradient-text">검증된 응답</span>이 중요하다</h2>
+          <div class="slide-grid-2">
+            <article class="card dark">
+              <p class="kicker">최종 정리</p>
+              <h3>이론과제 1 발표의 핵심 결론</h3>
+              <ul class="bullet-list">
+                <li>AI 환각은 여전히 현실적 문제이며, 사용자는 결과를 그대로 신뢰하기 어렵다.</li>
+                <li>필요한 것은 더 긴 답변이 아니라 답변이 검토되는 구조와 불확실성을 표시하는 구조이다.</li>
+                <li>제안 시스템은 모델 선택, 라운드 수 설정, 메신저형 토론 UI, 판정 모델, 판단 보류 기능으로 이 문제를 해결하려 한다.</li>
+                <li>즉 본 시스템은 “AI가 말한 답”이 아니라 “검증을 통과한 답”을 제공하는 방향의 소프트웨어 시스템이다.</li>
+              </ul>
+            </article>
+            <article class="card source-card">
+              <p class="kicker">참고 자료</p>
+              <h3>근거 그래프와 문제 배경에 사용한 자료</h3>
+              <ol class="source-list">
+                <li>OpenAI, <a href="https://openai.com/index/truthfulqa/" target="_blank" rel="noreferrer">TruthfulQA: Measuring how models mimic human falsehoods</a>, 2021.</li>
+                <li>OpenAI, <a href="https://cdn.openai.com/papers/gpt-4.pdf" target="_blank" rel="noreferrer">GPT-4 Technical Report</a>, 2023.</li>
+                <li>Farquhar et al., Nature, <a href="https://www.nature.com/articles/s41586-024-07421-0" target="_blank" rel="noreferrer">Detecting hallucinations in large language models using semantic entropy</a>, 2024.</li>
+                <li>Asgari et al., npj Digital Medicine, <a href="https://www.nature.com/articles/s41746-025-01670-7" target="_blank" rel="noreferrer">A framework to assess clinical safety and hallucination rates of LLMs for medical text summarisation</a>, 2025.</li>
+              </ol>
+              <p class="footnote">그래프 수치는 위 논문 및 공식 보고서의 공개 수치를 바탕으로 발표용으로 재구성했다.</p>
+            </article>
+          </div>
+        </div>
+        <div class="section-footer"><span>발표 마무리</span><span>Thank you</span></div>
+      </div>
+    </section>
+  </main>
+
+  <div class="controls">
+    <button class="control-button secondary" id="prevButton" type="button">←</button>
+    <button class="control-button" id="nextButton" type="button">→</button>
+    <span class="control-hint">슬라이드 이동</span>
+  </div>
+
+  <script src="./script.js"></script>
+</body>
+</html>
