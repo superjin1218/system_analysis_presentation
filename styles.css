@@ -188,6 +188,10 @@ a:hover {
   gap: 22px;
 }
 
+.slide-shell.is-fit-scaled {
+  will-change: transform;
+}
+
 .eyebrow,
 .badge,
 .pill,
@@ -2891,6 +2895,235 @@ body.is-outro-active .outro-halo-b {
   .evidence-chart-shell .callout {
     padding: 10px 12px;
     font-size: 0.86rem;
+  }
+}
+
+@media (max-height: 820px) {
+  :root {
+    --slide-padding: 22px;
+  }
+
+  .hud {
+    inset: 12px 12px auto 12px;
+    padding: 10px 14px;
+  }
+
+  .hud-logo {
+    width: 34px;
+    height: 34px;
+    font-size: 16px;
+  }
+
+  .hud-copy strong {
+    font-size: 0.88rem;
+  }
+
+  .hud-copy span,
+  .slide-counter {
+    font-size: 0.84rem;
+  }
+
+  .progress-shell {
+    height: 8px;
+  }
+
+  .slide {
+    padding: calc(var(--slide-padding) + 42px) var(--slide-padding) calc(var(--slide-padding) + 38px);
+  }
+
+  .slide-shell {
+    gap: 14px;
+  }
+
+  .section-body {
+    gap: 12px;
+    padding-right: 4px;
+  }
+
+  .eyebrow,
+  .badge,
+  .pill,
+  .label-muted {
+    padding: 7px 10px;
+    font-size: 0.76rem;
+  }
+
+  .title {
+    font-size: clamp(1.48rem, 2.28vw, 2.76rem);
+    max-width: 19ch;
+  }
+
+  .hero-title {
+    font-size: clamp(1.92rem, 3.28vw, 3.52rem);
+    max-width: 13.8ch;
+  }
+
+  .subtitle,
+  .card p,
+  .mini-note,
+  .footnote {
+    font-size: 0.9rem;
+    line-height: 1.58;
+  }
+
+  .card,
+  .persona-card,
+  .flow-step,
+  .chart-shell,
+  .chat-shell {
+    padding: 18px;
+  }
+
+  .section-footer {
+    font-size: 0.78rem;
+  }
+
+  .hero-layout {
+    grid-template-columns: minmax(0, 1fr) minmax(300px, 0.78fr);
+  }
+
+  .hero-stage {
+    min-height: 360px;
+  }
+
+  .hero-copy,
+  .chart-shell,
+  .bar-meta,
+  .hero-stat {
+    gap: 12px;
+  }
+
+  .feature-grid,
+  .scenario-grid,
+  .slide-grid-3,
+  .slide-grid-4,
+  .persona-grid,
+  .flow-strip,
+  .problem-strip,
+  .small-grid,
+  .chat-layout,
+  .split-emphasis,
+  .hero-stats {
+    gap: 14px;
+  }
+
+  .feature-card,
+  .scenario-card {
+    min-height: 0;
+  }
+
+  .controls-wrap {
+    bottom: 14px;
+    right: 14px;
+  }
+
+  .controls {
+    padding: 10px 12px;
+  }
+
+  .control-button {
+    width: 46px;
+    height: 46px;
+  }
+
+  .control-hint {
+    font-size: 0.82rem;
+  }
+
+  .evidence-slide {
+    padding-top: 42px;
+    padding-bottom: 14px;
+  }
+
+  .evidence-slide .slide-shell {
+    gap: 14px;
+  }
+
+  .evidence-intro,
+  .evidence-copy {
+    gap: 10px;
+  }
+
+  .evidence-title {
+    max-width: 12ch;
+    font-size: clamp(1.42rem, 2.16vw, 2.34rem);
+  }
+
+  .evidence-subtitle {
+    font-size: 0.8rem;
+    line-height: 1.46;
+  }
+
+  .evidence-chart-shell {
+    padding: 14px 16px 12px;
+    gap: 10px;
+  }
+
+  .evidence-chart-shell .chart-header {
+    gap: 8px;
+  }
+
+  .evidence-chart-shell .chart-caption {
+    max-width: none;
+    font-size: 0.8rem;
+    line-height: 1.46;
+  }
+
+  .evidence-table-card {
+    grid-template-columns: minmax(0, 1.1fr) minmax(220px, 0.9fr);
+    gap: 8px 12px;
+  }
+
+  .evidence-axis {
+    font-size: 0.64rem;
+  }
+
+  .evidence-bar-board {
+    gap: 6px;
+  }
+
+  .evidence-bar-row {
+    grid-template-columns: 176px minmax(0, 1fr) 60px;
+    gap: 8px;
+    padding: 7px 9px;
+    border-radius: 14px;
+  }
+
+  .evidence-bar-head {
+    gap: 8px;
+  }
+
+  .evidence-bar-track {
+    height: 12px;
+  }
+
+  .evidence-bar-value {
+    font-size: 0.88rem;
+  }
+
+  .evidence-summary-table {
+    border-spacing: 0 3px;
+  }
+
+  .evidence-summary-table th {
+    padding: 0 5px 1px;
+    font-size: 0.62rem;
+  }
+
+  .evidence-summary-table td {
+    padding: 5px 6px;
+    font-size: 0.74rem;
+  }
+
+  .evidence-rank {
+    width: 20px;
+    height: 20px;
+    font-size: 0.64rem;
+  }
+
+  .evidence-table-value {
+    min-width: 44px;
+    font-size: 0.78rem;
   }
 }
 

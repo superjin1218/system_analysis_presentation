@@ -6,6 +6,64 @@ const prevButton = document.getElementById("prevButton");
 const nextButton = document.getElementById("nextButton");
 
 let currentIndex = 0;
+let fitTimer = null;
+
+function resetSlideFit(slide) {
+  const shell = slide?.querySelector(".slide-shell");
+  const body = slide?.querySelector(".section-body");
+  if (!shell || !body) return;
+
+  shell.classList.remove("is-fit-scaled");
+  shell.style.transform = "";
+  shell.style.height = "";
+  shell.style.transformOrigin = "";
+
+  body.style.height = "";
+  body.style.minHeight = "";
+  body.style.overflowY = "";
+}
+
+function fitSlideToViewport(slide) {
+  const shell = slide?.querySelector(".slide-shell");
+  const body = slide?.querySelector(".section-body");
+  if (!shell || !body) return;
+
+  resetSlideFit(slide);
+
+  const availableHeight = slide.clientHeight;
+  const bodyViewportHeight = body.clientHeight;
+  const naturalBodyHeight = Math.max(body.scrollHeight, bodyViewportHeight);
+  const bodyOverflow = Math.max(0, naturalBodyHeight - bodyViewportHeight);
+  const naturalShellHeight = Math.max(
+    shell.scrollHeight,
+    availableHeight + bodyOverflow,
+  );
+
+  if (!availableHeight || (naturalShellHeight <= availableHeight && bodyOverflow <= 1)) {
+    return;
+  }
+
+  const scale = Math.max(0.58, Math.min(1, availableHeight / naturalShellHeight));
+
+  body.style.height = `${naturalBodyHeight}px`;
+  body.style.minHeight = `${naturalBodyHeight}px`;
+  body.style.overflowY = "visible";
+
+  shell.style.height = `${naturalShellHeight}px`;
+  shell.style.transformOrigin = "top center";
+  shell.style.transform = `scale(${scale})`;
+  shell.classList.add("is-fit-scaled");
+}
+
+function scheduleSlideFit(slide) {
+  if (!slide) return;
+
+  const applyFit = () => fitSlideToViewport(slide);
+  requestAnimationFrame(() => requestAnimationFrame(applyFit));
+
+  window.clearTimeout(fitTimer);
+  fitTimer = window.setTimeout(applyFit, 140);
+}
 
 function buildOutroSlide() {
   const lastSlide = slides[slides.length - 1];
@@ -315,6 +373,9 @@ function renderSlide(index) {
   slides.forEach((slide, slideIndex) => {
     slide.classList.toggle("is-active", slideIndex === currentIndex);
     slide.setAttribute("aria-hidden", slideIndex === currentIndex ? "false" : "true");
+    if (slideIndex !== currentIndex) {
+      resetSlideFit(slide);
+    }
   });
 
   const activeSlide = slides[currentIndex];
@@ -330,6 +391,7 @@ function renderSlide(index) {
   nextButton.style.opacity = currentIndex === slides.length - 1 ? "0.45" : "1";
 
   animateSlide(activeSlide);
+  scheduleSlideFit(activeSlide);
 }
 
 prevButton.addEventListener("click", () => renderSlide(currentIndex - 1));
@@ -359,3 +421,17 @@ document.addEventListener("keydown", (event) => {
 
 buildOutroSlide();
 renderSlide(getInitialIndex());
+
+window.addEventListener("resize", () => {
+  const activeSlide = slides[currentIndex];
+  if (!activeSlide) return;
+  scheduleSlideFit(activeSlide);
+});
+
+if (document.fonts?.ready) {
+  document.fonts.ready.then(() => {
+    const activeSlide = slides[currentIndex];
+    if (!activeSlide) return;
+    scheduleSlideFit(activeSlide);
+  });
+}
