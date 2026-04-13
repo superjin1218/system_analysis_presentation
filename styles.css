@@ -1674,6 +1674,19 @@ a:hover {
   overflow: hidden;
 }
 
+.compare-slide .slide-shell {
+  gap: 16px;
+}
+
+.compare-slide .section-body {
+  gap: 12px;
+}
+
+.compare-slide .title {
+  max-width: 15.5ch;
+  font-size: clamp(1.72rem, 2.74vw, 3rem);
+}
+
 .compare-table th,
 .compare-table td {
   padding: 18px 16px;
@@ -1697,6 +1710,24 @@ a:hover {
 
 .compare-table tr:last-child td {
   border-bottom: 0;
+}
+
+.compare-slide .compare-table th,
+.compare-slide .compare-table td {
+  padding: 14px 14px;
+  font-size: 0.88rem;
+  line-height: 1.52;
+}
+
+.compare-slide .compare-table th {
+  font-size: 0.75rem;
+}
+
+.compare-slide .callout {
+  padding: 12px 14px;
+  border-radius: 18px;
+  font-size: 0.9rem;
+  line-height: 1.5;
 }
 
 .controls-wrap {
@@ -3124,6 +3155,36 @@ body.is-outro-active .outro-halo-b {
   .evidence-table-value {
     min-width: 44px;
     font-size: 0.78rem;
+  }
+
+  .compare-slide .slide-shell {
+    gap: 12px;
+  }
+
+  .compare-slide .section-body {
+    gap: 10px;
+  }
+
+  .compare-slide .title {
+    max-width: 15.8ch;
+    font-size: clamp(1.48rem, 2.08vw, 2.38rem);
+  }
+
+  .compare-slide .compare-table th,
+  .compare-slide .compare-table td {
+    padding: 11px 12px;
+    font-size: 0.8rem;
+    line-height: 1.42;
+  }
+
+  .compare-slide .compare-table th {
+    font-size: 0.68rem;
+  }
+
+  .compare-slide .callout {
+    padding: 10px 12px;
+    font-size: 0.8rem;
+    line-height: 1.42;
   }
 }
 
