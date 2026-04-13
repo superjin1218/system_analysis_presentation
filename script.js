@@ -20,8 +20,8 @@ function buildOutroSlide() {
   if (body) {
     body.className = "section-body outro-body";
     body.innerHTML = `
-      <div class="outro-layout">
-        <div class="outro-copy">
+      <div class="outro-layout outro-layout-simple">
+        <div class="outro-copy outro-copy-simple">
           <p class="kicker">발표 마무리</p>
           <h2 class="title outro-title">
             <span class="gradient-text">감사합니다</span>
@@ -35,51 +35,6 @@ function buildOutroSlide() {
             <span class="pill">토론 라운드 조절</span>
             <span class="pill">판정 모델</span>
             <span class="pill">불확실성 표시</span>
-          </div>
-        </div>
-        <div class="outro-stage" aria-hidden="true">
-          <div class="outro-halo outro-halo-a"></div>
-          <div class="outro-halo outro-halo-b"></div>
-          <div class="outro-thanks-bubble">감사합니다</div>
-          <div class="outro-character">
-            <div class="outro-shadow"></div>
-            <div class="outro-lower">
-              <span class="outro-leg outro-leg-back"></span>
-              <span class="outro-leg outro-leg-front"></span>
-              <span class="outro-foot outro-foot-back"></span>
-              <span class="outro-foot outro-foot-front"></span>
-            </div>
-            <div class="outro-upper">
-              <span class="outro-tail"></span>
-              <div class="outro-body-shell">
-                <span class="outro-body-main"></span>
-                <span class="outro-body-panel"></span>
-                <span class="outro-button outro-button-1"></span>
-                <span class="outro-button outro-button-2"></span>
-                <span class="outro-button outro-button-3"></span>
-                <span class="outro-wing outro-wing-back"></span>
-                <span class="outro-wing outro-wing-front"></span>
-              </div>
-              <span class="outro-neck"></span>
-              <div class="outro-head">
-                <div class="outro-hat">
-                  <span class="outro-hat-brim"></span>
-                  <span class="outro-ai-badge">AI</span>
-                </div>
-                <span class="outro-brow outro-brow-back"></span>
-                <span class="outro-brow outro-brow-front"></span>
-                <span class="outro-eye outro-eye-back"></span>
-                <span class="outro-eye outro-eye-front"></span>
-                <span class="outro-eye-shine outro-eye-shine-back"></span>
-                <span class="outro-eye-shine outro-eye-shine-front"></span>
-                <span class="outro-cheek outro-cheek-back"></span>
-                <span class="outro-cheek outro-cheek-front"></span>
-                <div class="outro-beak">
-                  <span class="outro-beak-top"></span>
-                  <span class="outro-beak-bottom"></span>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </div>

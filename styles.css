@@ -1822,11 +1822,22 @@ body.is-hero-active .nav-guide {
   min-height: 100%;
 }
 
+.outro-layout-simple {
+  grid-template-columns: 1fr;
+  justify-items: center;
+}
+
 .outro-copy {
   display: grid;
   gap: 18px;
   align-content: center;
   max-width: 700px;
+}
+
+.outro-copy-simple {
+  justify-items: center;
+  text-align: center;
+  max-width: 860px;
 }
 
 .outro-title {
@@ -1852,6 +1863,14 @@ body.is-hero-active .nav-guide {
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
+}
+
+.outro-copy-simple .outro-subtitle {
+  max-width: 62ch;
+}
+
+.outro-copy-simple .outro-chip-row {
+  justify-content: center;
 }
 
 .outro-chip-row .pill {
