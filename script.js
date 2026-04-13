@@ -41,66 +41,46 @@ function buildOutroSlide() {
           <div class="outro-halo outro-halo-a"></div>
           <div class="outro-halo outro-halo-b"></div>
           <div class="outro-thanks-bubble">감사합니다</div>
-          <svg class="outro-character" viewBox="0 0 420 420" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-              <linearGradient id="outroCoat" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#2563eb"/>
-                <stop offset="55%" stop-color="#1e3a8a"/>
-                <stop offset="100%" stop-color="#0f172a"/>
-              </linearGradient>
-              <linearGradient id="outroHead" x1="0%" y1="0%" x2="100%" y2="100%">
-                <stop offset="0%" stop-color="#ffffff"/>
-                <stop offset="100%" stop-color="#dbeafe"/>
-              </linearGradient>
-              <radialGradient id="outroStageGlow" cx="50%" cy="40%" r="60%">
-                <stop offset="0%" stop-color="rgba(59,130,246,0.26)"/>
-                <stop offset="100%" stop-color="rgba(59,130,246,0)"/>
-              </radialGradient>
-            </defs>
-            <ellipse class="outro-shadow" cx="214" cy="364" rx="92" ry="18" fill="rgba(15,23,42,0.12)"/>
-            <ellipse class="outro-back-glow" cx="214" cy="214" rx="132" ry="122" fill="url(#outroStageGlow)"/>
-            <g class="outro-duck-float">
-              <g class="outro-bow-rig">
-                <g class="outro-body-group">
-                  <path d="M146 224C142 182 164 149 204 138H260C300 149 321 183 317 226L309 293C305 327 279 349 246 349H222C186 349 159 325 155 292L146 224Z" fill="url(#outroCoat)"/>
-                  <path d="M204 138C178 150 162 180 161 214C180 219 196 212 209 194L204 138Z" fill="#0b1220" opacity="0.92"/>
-                  <path d="M262 138C290 150 305 181 307 214C287 220 270 212 256 194L262 138Z" fill="#0b1220" opacity="0.92"/>
-                  <path d="M203 189H261V312C261 331 246 345 228 345C214 345 203 333 203 318V189Z" fill="#f8fafc" opacity="0.98"/>
-                  <circle cx="231" cy="222" r="7" fill="#60a5fa"/>
-                  <circle cx="231" cy="251" r="7" fill="#60a5fa"/>
-                  <circle cx="231" cy="280" r="7" fill="#60a5fa"/>
-                </g>
-                <g class="outro-left-wing">
-                  <path d="M169 223C147 219 133 231 137 249C142 268 161 277 184 274L194 236C188 228 179 224 169 223Z" fill="url(#outroCoat)"/>
-                </g>
-                <g class="outro-right-wing">
-                  <path d="M289 221C311 216 328 227 332 245C336 265 321 278 295 278L278 239C280 231 284 224 289 221Z" fill="url(#outroCoat)"/>
-                </g>
-                <g class="outro-head-group">
-                  <circle cx="230" cy="106" r="94" fill="url(#outroHead)"/>
-                  <ellipse cx="211" cy="88" rx="14" ry="8" fill="#cbd5f5" opacity="0.5"/>
-                  <ellipse cx="249" cy="88" rx="14" ry="8" fill="#cbd5f5" opacity="0.5"/>
-                  <circle cx="208" cy="106" r="11" fill="#111827"/>
-                  <circle cx="253" cy="106" r="11" fill="#111827"/>
-                  <circle cx="211" cy="102" r="3" fill="#ffffff"/>
-                  <circle cx="256" cy="102" r="3" fill="#ffffff"/>
-                  <ellipse cx="231" cy="141" rx="36" ry="23" fill="#f59e0b"/>
-                  <path d="M198 140C212 150 247 151 264 140" stroke="#b45309" stroke-width="4" stroke-linecap="round"/>
-                  <circle cx="189" cy="141" r="8" fill="#fecdd3" opacity="0.8"/>
-                  <circle cx="272" cy="141" r="8" fill="#fecdd3" opacity="0.8"/>
-                  <path d="M193 46C203 27 216 19 228 19C242 19 256 28 266 47" fill="none" stroke="#eff6ff" stroke-width="11" stroke-linecap="round"/>
-                  <path d="M183 35C187 15 205 0 230 0C255 0 273 14 278 35L279 44H181L183 35Z" fill="#0f172a"/>
-                  <rect x="173" y="26" width="113" height="27" rx="13.5" fill="#1d4ed8"/>
-                  <rect x="197" y="0" width="64" height="32" rx="16" fill="#e0f2fe" stroke="#93c5fd" stroke-width="4"/>
-                  <text x="229" y="21" text-anchor="middle" fill="#1d4ed8" style="font-family:Pretendard,sans-serif;font-size:20px;font-weight:900;">AI</text>
-                </g>
-                <g class="outro-feet-group">
-                  <path d="M187 315C182 334 188 347 203 357" fill="none" stroke="#f59e0b" stroke-width="10" stroke-linecap="round"/>
-                  <path d="M260 315C255 335 262 348 277 357" fill="none" stroke="#f59e0b" stroke-width="10" stroke-linecap="round"/>
-                </g>
-              </g>
-            </g>
-          </svg>
+          <div class="outro-character">
+            <div class="outro-shadow"></div>
+            <div class="outro-lower">
+              <span class="outro-leg outro-leg-back"></span>
+              <span class="outro-leg outro-leg-front"></span>
+              <span class="outro-foot outro-foot-back"></span>
+              <span class="outro-foot outro-foot-front"></span>
+            </div>
+            <div class="outro-upper">
+              <span class="outro-tail"></span>
+              <div class="outro-body-shell">
+                <span class="outro-body-main"></span>
+                <span class="outro-body-panel"></span>
+                <span class="outro-button outro-button-1"></span>
+                <span class="outro-button outro-button-2"></span>
+                <span class="outro-button outro-button-3"></span>
+                <span class="outro-wing outro-wing-back"></span>
+                <span class="outro-wing outro-wing-front"></span>
+              </div>
+              <span class="outro-neck"></span>
+              <div class="outro-head">
+                <div class="outro-hat">
+                  <span class="outro-hat-brim"></span>
+                  <span class="outro-ai-badge">AI</span>
+                </div>
+                <span class="outro-brow outro-brow-back"></span>
+                <span class="outro-brow outro-brow-front"></span>
+                <span class="outro-eye outro-eye-back"></span>
+                <span class="outro-eye outro-eye-front"></span>
+                <span class="outro-eye-shine outro-eye-shine-back"></span>
+                <span class="outro-eye-shine outro-eye-shine-front"></span>
+                <span class="outro-cheek outro-cheek-back"></span>
+                <span class="outro-cheek outro-cheek-front"></span>
+                <div class="outro-beak">
+                  <span class="outro-beak-top"></span>
+                  <span class="outro-beak-bottom"></span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     `;

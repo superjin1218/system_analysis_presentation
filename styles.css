@@ -1941,113 +1941,361 @@ body.is-hero-active .nav-guide {
 .outro-character {
   position: relative;
   z-index: 1;
-  width: min(100%, 420px);
-  height: auto;
-  transform: translateY(-16px);
+  width: min(100%, 360px);
+  height: 390px;
   filter: drop-shadow(0 24px 50px rgba(15, 23, 42, 0.14));
 }
 
-.outro-body-group,
-.outro-duck-float,
-.outro-bow-rig,
-.outro-head-group,
-.outro-left-wing,
-.outro-right-wing,
-.outro-feet-group,
 .outro-shadow,
+.outro-upper,
+.outro-head,
+.outro-wing,
+.outro-lower,
 .outro-thanks-bubble,
 .outro-halo-a,
 .outro-halo-b {
   animation-play-state: paused;
 }
 
-.outro-duck-float {
-  transform-box: fill-box;
-  transform-origin: 51% 86%;
+.outro-shadow {
+  position: absolute;
+  left: 188px;
+  bottom: 22px;
+  width: 188px;
+  height: 24px;
+  border-radius: 999px;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(15, 23, 42, 0.22), rgba(15, 23, 42, 0));
+  filter: blur(4px);
 }
 
-.outro-bow-rig {
-  transform-box: fill-box;
-  transform-origin: 230px 330px;
+.outro-lower {
+  position: absolute;
+  left: 176px;
+  bottom: 34px;
+  width: 120px;
+  height: 122px;
+  transform: translateX(-50%);
 }
 
-.outro-body-group {
-  transform-box: fill-box;
-  transform-origin: 230px 330px;
+.outro-leg {
+  position: absolute;
+  bottom: 22px;
+  width: 18px;
+  height: 86px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
 }
 
-.outro-head-group {
-  transform-box: fill-box;
-  transform-origin: 230px 124px;
+.outro-leg-back {
+  left: 28px;
 }
 
-.outro-left-wing {
-  transform-box: fill-box;
-  transform-origin: 176px 240px;
+.outro-leg-front {
+  left: 60px;
 }
 
-.outro-right-wing {
-  transform-box: fill-box;
-  transform-origin: 292px 239px;
+.outro-foot {
+  position: absolute;
+  bottom: 0;
+  width: 52px;
+  height: 18px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
 }
 
-.outro-feet-group {
-  transform-box: fill-box;
-  transform-origin: 230px 340px;
+.outro-foot-back {
+  left: 8px;
 }
 
-body.is-outro-active .outro-duck-float {
-  animation: outroDuckFloat 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+.outro-foot-front {
+  left: 40px;
+}
+
+.outro-upper {
+  position: absolute;
+  left: 86px;
+  bottom: 112px;
+  width: 236px;
+  height: 228px;
+  transform-origin: 38% 100%;
+}
+
+.outro-tail {
+  position: absolute;
+  left: 2px;
+  bottom: 96px;
+  width: 48px;
+  height: 58px;
+  border-radius: 48% 52% 38% 62%;
+  background: linear-gradient(140deg, #1d4ed8, #0f172a);
+  transform: rotate(-26deg);
+}
+
+.outro-body-shell {
+  position: absolute;
+  left: 30px;
+  bottom: 0;
+  width: 138px;
+  height: 164px;
+}
+
+.outro-body-main {
+  position: absolute;
+  inset: 0;
+  border-radius: 42% 48% 42% 38% / 38% 44% 32% 42%;
+  background: linear-gradient(160deg, #3158d8, #1e3a8a 58%, #0f172a);
+}
+
+.outro-body-panel {
+  position: absolute;
+  left: 48px;
+  top: 20px;
+  width: 50px;
+  height: 128px;
+  border-radius: 28px;
+  background: linear-gradient(180deg, #ffffff, #eff6ff);
+}
+
+.outro-button {
+  position: absolute;
+  left: 66px;
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: #60a5fa;
+}
+
+.outro-button-1 {
+  top: 40px;
+}
+
+.outro-button-2 {
+  top: 72px;
+}
+
+.outro-button-3 {
+  top: 104px;
+}
+
+.outro-wing {
+  position: absolute;
+  top: 46px;
+  width: 44px;
+  height: 80px;
+  border-radius: 48% 52% 46% 54%;
+  background: linear-gradient(170deg, #17338c, #0f172a);
+}
+
+.outro-wing-back {
+  left: 8px;
+  transform: rotate(-14deg);
+}
+
+.outro-wing-front {
+  right: 2px;
+  transform: rotate(12deg);
+}
+
+.outro-neck {
+  position: absolute;
+  left: 140px;
+  bottom: 118px;
+  width: 36px;
+  height: 28px;
+  border-radius: 40% 60% 50% 50%;
+  background: linear-gradient(180deg, #ffffff, #eff6ff);
+  transform: rotate(12deg);
+}
+
+.outro-head {
+  position: absolute;
+  right: 0;
+  top: 8px;
+  width: 136px;
+  height: 114px;
+  border-radius: 56% 62% 54% 48% / 54% 58% 46% 42%;
+  background: linear-gradient(180deg, #ffffff, #dbeafe);
+  transform: rotate(-4deg);
+  box-shadow: inset -10px -10px 18px rgba(191, 219, 254, 0.58);
+}
+
+.outro-hat {
+  position: absolute;
+  left: 36px;
+  top: -18px;
+  width: 76px;
+  height: 42px;
+}
+
+.outro-hat-brim {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 76px;
+  height: 26px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #1d4ed8, #3158d8);
+}
+
+.outro-ai-badge {
+  position: absolute;
+  left: 13px;
+  top: 0;
+  width: 50px;
+  height: 28px;
+  border-radius: 14px;
+  border: 4px solid #93c5fd;
+  background: #e0f2fe;
+  color: #1d4ed8;
+  font-size: 1.5rem;
+  font-weight: 900;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: -0.04em;
+  padding-top: 1px;
+}
+
+.outro-brow,
+.outro-eye,
+.outro-eye-shine,
+.outro-cheek {
+  position: absolute;
+  border-radius: 999px;
+}
+
+.outro-brow {
+  width: 20px;
+  height: 9px;
+  background: rgba(203, 213, 245, 0.92);
+}
+
+.outro-brow-back {
+  left: 34px;
+  top: 36px;
+}
+
+.outro-brow-front {
+  left: 72px;
+  top: 32px;
+}
+
+.outro-eye {
+  width: 16px;
+  height: 22px;
+  background: #111827;
+}
+
+.outro-eye-back {
+  left: 38px;
+  top: 48px;
+}
+
+.outro-eye-front {
+  left: 82px;
+  top: 45px;
+}
+
+.outro-eye-shine {
+  width: 5px;
+  height: 5px;
+  background: #ffffff;
+}
+
+.outro-eye-shine-back {
+  left: 42px;
+  top: 51px;
+}
+
+.outro-eye-shine-front {
+  left: 86px;
+  top: 48px;
+}
+
+.outro-cheek {
+  width: 14px;
+  height: 14px;
+  background: rgba(253, 205, 211, 0.92);
+}
+
+.outro-cheek-back {
+  left: 34px;
+  top: 74px;
+}
+
+.outro-cheek-front {
+  left: 90px;
+  top: 70px;
+}
+
+.outro-beak {
+  position: absolute;
+  right: -10px;
+  top: 64px;
+  width: 66px;
+  height: 34px;
+}
+
+.outro-beak-top,
+.outro-beak-bottom {
+  position: absolute;
+  left: 0;
+  width: 56px;
+  height: 16px;
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fbbf24, #f59e0b);
+}
+
+.outro-beak-top {
+  top: 3px;
+  transform: rotate(-3deg);
+}
+
+.outro-beak-bottom {
+  top: 16px;
+  left: 4px;
+  width: 52px;
+  background: linear-gradient(180deg, #f59e0b, #ea580c);
+}
+
+body.is-outro-active .outro-upper {
+  animation: outroBellyBowUpper 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
-body.is-outro-active .outro-bow-rig {
-  animation: outroDuckBow 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+body.is-outro-active .outro-head {
+  animation: outroBellyBowHead 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
-body.is-outro-active .outro-body-group {
-  animation: outroDuckBodyFold 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+body.is-outro-active .outro-wing-back,
+body.is-outro-active .outro-wing-front {
+  animation: outroBellyBowWing 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
-body.is-outro-active .outro-head-group {
-  animation: outroDuckHeadBow 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
-  animation-play-state: running;
-}
-
-body.is-outro-active .outro-left-wing {
-  animation: outroDuckWingLeft 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
-  animation-play-state: running;
-}
-
-body.is-outro-active .outro-right-wing {
-  animation: outroDuckWingRight 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
-  animation-play-state: running;
-}
-
-body.is-outro-active .outro-feet-group {
-  animation: outroDuckFeet 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+body.is-outro-active .outro-lower {
+  animation: outroBellyBowLower 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
 body.is-outro-active .outro-shadow {
-  animation: outroDuckShadow 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+  animation: outroBellyBowShadow 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
 body.is-outro-active .outro-thanks-bubble {
-  animation: outroBubbleLift 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+  animation: outroBubbleLift 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
 body.is-outro-active .outro-halo-a {
-  animation: outroHaloA 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+  animation: outroHaloA 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
 body.is-outro-active .outro-halo-b {
-  animation: outroHaloB 6.8s cubic-bezier(0.37, 0, 0.16, 1) infinite;
+  animation: outroHaloB 5.8s cubic-bezier(0.24, 0.74, 0.22, 1) infinite;
   animation-play-state: running;
 }
 
@@ -2085,93 +2333,62 @@ body.is-outro-active .outro-halo-b {
   100% { stroke-dashoffset: -10; opacity: 0; }
 }
 
-@keyframes outroDuckFloat {
-  0%, 16%, 100% { transform: translate3d(0, 0, 0); }
-  28% { transform: translate3d(0, -2px, 0); }
-  42% { transform: translate3d(0, 2px, 0); }
-  58% { transform: translate3d(0, 0, 0); }
-  76% { transform: translate3d(0, -3px, 0); }
+@keyframes outroBellyBowUpper {
+  0%, 18%, 100% { transform: translate3d(0, 0, 0) rotate(0deg); }
+  30% { transform: translate3d(4px, 8px, 0) rotate(16deg); }
+  42% { transform: translate3d(12px, 18px, 0) rotate(44deg); }
+  50%, 58% { transform: translate3d(18px, 26px, 0) rotate(78deg); }
+  70% { transform: translate3d(6px, 10px, 0) rotate(20deg); }
+  82% { transform: translate3d(0, 0, 0) rotate(0deg); }
 }
 
-@keyframes outroDuckBow {
-  0%, 16%, 100% { transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
-  28% { transform: translate3d(0, 10px, 0) scale3d(1.01, 0.95, 1); }
-  38% { transform: translate3d(0, 34px, 0) scale3d(1.05, 0.76, 1); }
-  46%, 54% { transform: translate3d(0, 54px, 0) scale3d(1.1, 0.56, 1); }
-  64% { transform: translate3d(0, 20px, 0) scale3d(1.03, 0.88, 1); }
-  78% { transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+@keyframes outroBellyBowHead {
+  0%, 18%, 100% { transform: rotate(-4deg); }
+  34% { transform: rotate(2deg); }
+  50%, 58% { transform: rotate(10deg); }
+  72% { transform: rotate(1deg); }
 }
 
-@keyframes outroDuckBodyFold {
-  0%, 16%, 100% { transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
-  30% { transform: translate3d(0, 6px, 0) scale3d(1.02, 0.95, 1); }
-  40% { transform: translate3d(0, 20px, 0) scale3d(1.04, 0.84, 1); }
-  46%, 54% { transform: translate3d(0, 30px, 0) scale3d(1.06, 0.72, 1); }
-  64% { transform: translate3d(0, 10px, 0) scale3d(1.02, 0.92, 1); }
-  78% { transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+@keyframes outroBellyBowWing {
+  0%, 18%, 100% { transform: rotate(0deg) translateY(0); }
+  34% { transform: rotate(6deg) translateY(3px); }
+  50%, 58% { transform: rotate(12deg) translateY(7px); }
+  72% { transform: rotate(3deg) translateY(1px); }
 }
 
-@keyframes outroDuckHeadBow {
-  0%, 16%, 100% { transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
-  30% { transform: translate3d(0, 12px, 0) scale3d(1.01, 0.92, 1); }
-  40% { transform: translate3d(0, 32px, 0) scale3d(1.05, 0.74, 1); }
-  46%, 54% { transform: translate3d(0, 46px, 0) scale3d(1.08, 0.62, 1); }
-  64% { transform: translate3d(0, 16px, 0) scale3d(1.02, 0.9, 1); }
-  78% { transform: translate3d(0, 0, 0) scale3d(1, 1, 1); }
+@keyframes outroBellyBowLower {
+  0%, 18%, 100% { transform: translateX(-50%) translateY(0); }
+  42% { transform: translateX(-50%) translateY(3px); }
+  50%, 58% { transform: translateX(-50%) translateY(6px); }
+  72% { transform: translateX(-50%) translateY(1px); }
 }
 
-@keyframes outroDuckWingLeft {
-  0%, 16%, 100% { transform: rotate(0deg) translate(0, 0) scaleY(1); }
-  30% { transform: rotate(6deg) translate(4px, 8px) scaleY(0.96); }
-  40% { transform: rotate(14deg) translate(10px, 18px) scaleY(0.9); }
-  46%, 54% { transform: rotate(18deg) translate(14px, 24px) scaleY(0.84); }
-  64% { transform: rotate(8deg) translate(6px, 10px) scaleY(0.94); }
-  78% { transform: rotate(0deg) translate(0, 0) scaleY(1); }
-}
-
-@keyframes outroDuckWingRight {
-  0%, 16%, 100% { transform: rotate(0deg) translate(0, 0) scaleY(1); }
-  30% { transform: rotate(-6deg) translate(-4px, 8px) scaleY(0.96); }
-  40% { transform: rotate(-14deg) translate(-10px, 18px) scaleY(0.9); }
-  46%, 54% { transform: rotate(-18deg) translate(-14px, 24px) scaleY(0.84); }
-  64% { transform: rotate(-8deg) translate(-6px, 10px) scaleY(0.94); }
-  78% { transform: rotate(0deg) translate(0, 0) scaleY(1); }
-}
-
-@keyframes outroDuckFeet {
-  0%, 16%, 100% { transform: translateY(0) scaleY(1); }
-  40% { transform: translateY(4px) scaleY(0.96); }
-  46%, 54% { transform: translateY(7px) scaleY(0.92); }
-  64% { transform: translateY(2px) scaleY(0.98); }
-}
-
-@keyframes outroDuckShadow {
-  0%, 16%, 100% { transform: scaleX(1); opacity: 0.12; }
-  40% { transform: scaleX(1.12); opacity: 0.18; }
-  46%, 54% { transform: scaleX(1.22); opacity: 0.22; }
-  64% { transform: scaleX(1.08); opacity: 0.16; }
-  78% { transform: scaleX(1); opacity: 0.12; }
+@keyframes outroBellyBowShadow {
+  0%, 18%, 100% { transform: translateX(-50%) scaleX(1); opacity: 0.22; }
+  42% { transform: translateX(-50%) scaleX(1.14); opacity: 0.28; }
+  50%, 58% { transform: translateX(-50%) scaleX(1.3); opacity: 0.32; }
+  72% { transform: translateX(-50%) scaleX(1.08); opacity: 0.24; }
 }
 
 @keyframes outroBubbleLift {
-  0%, 16%, 100% { transform: translate3d(0, 0, 0) scale(1); }
-  30% { transform: translate3d(-2px, -4px, 0) scale(1.01); }
-  46%, 54% { transform: translate3d(-6px, -10px, 0) scale(1.03); }
-  64% { transform: translate3d(-1px, -2px, 0) scale(1.01); }
+  0%, 18%, 100% { transform: translate3d(0, 0, 0); }
+  34% { transform: translate3d(-2px, -4px, 0); }
+  50%, 58% { transform: translate3d(-6px, -8px, 0); }
+  72% { transform: translate3d(-1px, -2px, 0); }
 }
 
 @keyframes outroHaloA {
-  0%, 16%, 100% { transform: scale(1); opacity: 0.72; }
-  40% { transform: scale(1.1); opacity: 0.88; }
-  46%, 54% { transform: scale(1.16); opacity: 0.94; }
-  68% { transform: scale(1.02); opacity: 0.76; }
+  0%, 18%, 100% { transform: scale(1); opacity: 0.72; }
+  42% { transform: scale(1.08); opacity: 0.86; }
+  50%, 58% { transform: scale(1.14); opacity: 0.92; }
+  72% { transform: scale(1.02); opacity: 0.76; }
 }
 
 @keyframes outroHaloB {
-  0%, 16%, 100% { transform: scale(1); opacity: 0.66; }
-  40% { transform: scale(1.12); opacity: 0.84; }
-  46%, 54% { transform: scale(1.18); opacity: 0.9; }
-  68% { transform: scale(1.03); opacity: 0.7; }
+  0%, 18%, 100% { transform: scale(1); opacity: 0.66; }
+  42% { transform: scale(1.1); opacity: 0.82; }
+  50%, 58% { transform: scale(1.16); opacity: 0.88; }
+  72% { transform: scale(1.03); opacity: 0.7; }
 }
 
 @keyframes conductorBody {
